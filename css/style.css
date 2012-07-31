@@ -1,0 +1,66 @@
+/*
+
+title: index.html Styles
+By: Jon Roundy
+for: VFW - 1207 - Week 4 - Project 4
+
+*/
+
+	/* @font-face Definitions */
+	
+	@font-face {
+		font-family: 'AirstreamRegular';
+		src: url('css/fonts/Airstream.eot');
+		src: local('Airstream Regular'), local('Airstream'), url('fonts/Airstream.ttf') format('truetype');
+	}
+	
+	/* The very basics of document styling */
+	
+	body {
+		background:#303030 url(images/bg.jpg) repeat;
+		font-size:100%;
+		line-height:1em;
+		text-align:center;
+		color: white;
+	}
+
+	h1{
+		color:white;
+		text-align: Center;
+		font-size: 40pt;
+	}
+	
+	input {
+		margin: auto;
+		display:block;
+	}
+	
+	/* Additem initate button */
+	
+	input#button1 {
+		/* General Properties */
+		height:34px;
+		width:250px;
+		border:1px solid #858fa6;
+		background:#4a5775;
+		/* CSS3 Styling */
+		background:-moz-linear-gradient(top, #606c88, #3f4c6b);
+		background:-webkit-gradient(linear, left top, left bottom, from(#606c88), to(#3f4c6b)); /* for webkit browsers */
+		box-shadow:0px 0px 5px #000;
+		/* Text Styling */
+		font-family:'AirstreamRegular', Georgia, 'Times New Roman', serif;
+		color:#e5edff;
+		text-shadow:0px 0px 5px rgba(0, 0, 0, 0.75);
+		font-size:30px;
+	}
+		/* classes for interactivity */
+	
+	input#button1:hover, input#button1:focus {
+		border-color:#adbad9;
+	}
+	
+	input#button1:active {
+		background:-moz-linear-gradient(bottom, #606c88, #3f4c6b);
+		background:-webkit-gradient(linear, left bottom, left top, from(#606c88), to(#3f4c6b)); /* for webkit browsers */
+		text-shadow:0px 0px 2px #000;
+	}
