@@ -45,18 +45,20 @@ logo {
 
 nav {
 	background: -webkit-linear-gradient(rgba(41,84,9,0.98) 0%, #489e22 100%);
-	padding: 25px;
+	height: 45px;
 	font-weight: bold;
 	line-height: 10px;
-	width: auto !important;
-	height: auto !important;
 }
+
 a#home {
 	float: left;
+	padding: 15px;
 }
+
 /* Search Box - Start */	
 #search {
 float: right;
+padding: 5px;
 }
 
 #search input[type="text"] {
