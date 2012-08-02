@@ -290,7 +290,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
 	}
 	//Variable defaults
-	var categoryLists = ["--Choose A Category--", "Personal", "Work", "Misc"],
+	var categoryLists = ["--Choose A Category--", "Personal", "School", "Grocery", "Work", "Misc"],
 		urgentValue = "No",
 		errMsg = g('errors');
 	;

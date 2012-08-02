@@ -6,19 +6,25 @@ for: VFW - 1207 - Week 4 - Project 4
 
 */
 
-body {
-
+html,body {
 	background:#303030 url(images/bg.jpg) repeat;
 	font-size:100%;
 	line-height:1em;
-	text-align:left;
-	color: white;
-	a {font-family:Georgia,serif; font-size:large}
-	a:link {color:blue;}
-	a:visited {color: #0c2554;}
-	a:hover {text-decoration: none; color: #ff9900;
-	font-weight:bold;}
-	a:active {color: red;text-decoration: none}
+	color:white;
+	height: 0%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+header {
+	background: -webkit-linear-gradient(rgba(69,130,156,0.98) 0%, #fbf9f8 100%);
+	padding: 5px;
+	font-weight: bold;
+	line-height: 3px;
+	width: auto;
+	height: auto;
+	text-align:center; 
 }
 
 h1 {
