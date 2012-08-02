@@ -8,59 +8,131 @@ for: VFW - 1207 - Week 4 - Project 4
 
 	/* @font-face Definitions */
 	
-	@font-face {
+@font-face {
 		font-family: 'AirstreamRegular';
 		src: url('css/fonts/Airstream.eot');
 		src: local('Airstream Regular'), local('Airstream'), url('fonts/Airstream.ttf') format('truetype');
-	}
+}
 	
-	/* The very basics of document styling */
 	
-	body {
-		background:#303030 url(images/bg.jpg) repeat;
-		font-size:100%;
-		line-height:1em;
-		text-align:center;
-		color: white;
-	}
+html,body {
+	background:#303030 url(images/bg.jpg) repeat;
+	font-size:100%;
+	line-height:1em;
+	text-align:center;
+	color:white;
+	height: 0%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
 
-	h1{
-		color:white;
-		text-align: Center;
-		font-size: 40pt;
-	}
 	
-	input {
-		margin: auto;
-		display:block;
-	}
+header {
+	background: -webkit-linear-gradient(rgba(69,130,156,0.98) 0%, #fbf9f8 100%);
+	padding: 5px;
+	font-weight: bold;
+	line-height: 3px;
+	width: auto;
+	height: auto;	 
+}
 	
+logo {
+	margin-left:100px; 
+	margin-top:20px; 
+	background-repeat: no-repeat; 
+	width:auto; 
+	height:auto;
+}
+	
+#searchbar {
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.2);
+    position: relative;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+#searchbar input.search {
+    border: 1px solid #6E93A9;
+    -moz-border-radius: 15px; /* non webk support */
+    border-radius: 15px;
+    height: 13px;
+    padding: 2px 10px;
+    width: 200px;
+    color: #999;
+    font-weight: normal;
+}
+
+#searchbar input.search:focus {
+    border: 1px solid #639bcf;
+}
+
+#searchbar input.submit {
+    background: -webkit-gradient(linear, left top, left bottom, from(#7dbe0a), to(#a2d93f));
+    background: -moz-linear-gradient(top, #7dbe0a, #a2d93f);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#7dbe0a', endColorstr='#a2d93f');
+    color: #FFF;
+    border: 1px solid #7ec115;
+    height: 19px;
+    line-height: 14px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    position: absolute;
+    right: 4px;
+    top: 3px;
+    cursor: pointer;
+}
+
+#searchbar input.submit:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#a2d93f), to(#7dbe0a));
+    background: -moz-linear-gradient(top, #a2d93f, #7dbe0a);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a2d93f', endColorstr='#7dbe0a');
+}
+
+#searchbar input.submit:focus,
+#searchbar input.submit:active {
+    background: -webkit-gradient(linear, left top, left bottom, from(#7dbe0a), to(#a2d93f));
+    background: -moz-linear-gradient(top, #7dbe0a 0%, #a2d93f 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7dbe0a', endColorstr='#a2d93f');
+}
+
+h1{
+	color:white;
+	text-align: Center;
+	font-size: 40pt;
+}
+
 	/* Additem initate button */
 	
-	input#button1 {
-		/* General Properties */
-		height:34px;
-		width:250px;
-		border:1px solid #858fa6;
-		background:#4a5775;
-		/* CSS3 Styling */
-		background:-moz-linear-gradient(top, #606c88, #3f4c6b);
-		background:-webkit-gradient(linear, left top, left bottom, from(#606c88), to(#3f4c6b)); /* for webkit browsers */
-		box-shadow:0px 0px 5px #000;
-		/* Text Styling */
-		font-family:'AirstreamRegular', Georgia, 'Times New Roman', serif;
-		color:#e5edff;
-		text-shadow:0px 0px 5px rgba(0, 0, 0, 0.75);
-		font-size:30px;
-	}
-		/* classes for interactivity */
+input#button1 {
+	/* General Properties */
+	height:34px;
+	width:250px;
+	border:1px solid #858fa6;
+	background:#4a5775;
+	/* CSS3 Styling */
+	background:-moz-linear-gradient(top, #606c88, #3f4c6b);
+	background:-webkit-gradient(linear, left top, left bottom, from(#606c88), to(#3f4c6b)); /* for webkit browsers */
+	box-shadow:0px 0px 5px #000;
+	/* Text Styling */
+	font-family:'AirstreamRegular', Georgia, 'Times New Roman', serif;
+	color:#e5edff;
+	text-shadow:0px 0px 5px rgba(0, 0, 0, 0.75);
+	font-size:30px;
+}
+	/* classes for interactivity */
 	
-	input#button1:hover, input#button1:focus {
-		border-color:#adbad9;
-	}
+input.button1:hover, input#button1:focus {
+	border-color:#adbad9;
+}
 	
-	input#button1:active {
-		background:-moz-linear-gradient(bottom, #606c88, #3f4c6b);
-		background:-webkit-gradient(linear, left bottom, left top, from(#606c88), to(#3f4c6b)); /* for webkit browsers */
-		text-shadow:0px 0px 2px #000;
-	}
+input.button1:active {
+	background:-moz-linear-gradient(bottom, #606c88, #3f4c6b);
+	background:-webkit-gradient(linear, left bottom, left top, from(#606c88), to(#3f4c6b)); /* for webkit browsers */
+	text-shadow:0px 0px 2px #000;
+}
