@@ -16,6 +16,11 @@ html,body {
 	padding: 0;
 	margin: 0;
 }
+a {
+	text-decoration: none !important;
+	color: white !important;
+	font-size: larger;
+}
 
 header {
 	background: -webkit-linear-gradient(rgba(69,130,156,0.98) 0%, #fbf9f8 100%);
@@ -37,7 +42,6 @@ h1 {
 	border: 4px inset rgba(246,246,246,0.7);
 	border-radius: 315px;
 	background: rgba(5,17,32,0.96);
-
 }
 
 nav {
