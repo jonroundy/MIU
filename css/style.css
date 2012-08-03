@@ -137,10 +137,12 @@ input.button1:active {
 }
 
 footer {
-	position:fixed;
-    left:0px;
-    bottom:0px;
-    height:30px;
-    width:100%;
-    background:#999;
+	background:-moz-linear-gradient(bottom, #606c88, #3f4c6b);
+	background:-webkit-gradient(linear, left bottom, left top, from(#222222), to(#8a8a8a));
+	width:100%;
+	height:50px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	text-align: center;
 }
