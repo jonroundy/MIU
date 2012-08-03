@@ -52,6 +52,16 @@ nav#nav1 {
 	line-height: 10px !important;
 	color: white !important;
 }
+
+/* Hyperlink style - start */
+
+a#home {
+	text-decoraton: none;
+	float: left;
+	padding: 15px;
+}
+/* Hyperlink style - stop */
+
 /* Search Box - Start */	
 #search {
 float: right;
@@ -89,9 +99,9 @@ padding: 5px;
 }
 /* Search Box - End */
 
-nav {
+nav#nav2 {
 	font-size: 15px;
-	background: -webkit-linear-gradient(#c7bdaa 0%, #afaca9 100%);
+	background: -webkit-linear-gradient(#9cabb2 0%, #727575 100%);
 	padding: 5px 0px 0px 0px;
 	font-weight: bold;
 	text-align: left;
@@ -116,23 +126,59 @@ nav {
 #items ul  {
 	margin-top: 20px;
 }
+/* input styling - Start */
+select#groups {
+	float:right;
+	position: relative;
+}
+
+input#taskname {
+	float:right;
+	position: relative;
+}
+
+input#date {
+	float:right;
+	position: relative;
+}
+
+input#time {
+	float:right;
+	position: relative;
+}
+
+input#urgent {
+	float:right;
+	position: relative;
+	margin-right: 26px;
+}
+
+textarea#textbox {
+	background-color : rgba(46,50,48,0.9);
+	border: 1px solid #fcfcfc;
+	width: 90%;
+	font-weight: bolder;
+	color: white;
+}
+
+/* input styling - Stop */
 
 fieldset#task {
 	font-size: 15px;
-	background: -webkit-linear-gradient(#c7bdaa 0%, #afaca9 100%);
+	background: -webkit-linear-gradient(#9cabb2 0%, #727575 100%);
 	color: black;
 	padding: 15px;
 	font-weight: bold;
 	text-align: left;
 	margin: 5px 5px 35px;
-	border: 3px solid rgba(246,246,246,0.7);
+	border: 3px solid rgba(219,219,219,1);
 	border-radius: 5px;
 	line-height: 30px;
 }
 
 fieldset#optional {
 	font-size: 15px;
-	background: -webkit-linear-gradient(#c7bdaa 0%, #afaca9 100%);
+	background: -webkit-linear-gradient(#9cabb2 0%, #727575 100%);
 	color: black;
 	padding: 15px;
 	font-weight: bold;
@@ -186,8 +232,8 @@ footer {
 	background:-webkit-gradient(linear, left bottom, left top, from(#222222), to(#8a8a8a));
 	width:100%;
 	height:50px;
-	position:absolute;
-	bottom:1;
+	position:relative;
+	bottom:0;
 	left:0;
 	text-align: center;
 }
