@@ -1,37 +1,183 @@
-<!DOCTYPE html> 
-<!-- Author: Jon Roundy -->
-<!-- MIU 1208 Week 2 -->
-<!-- Project 2 -->
-<html> 
-<head> 
-	<title>To Do List</title> 
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	 <link rel="stylesheet" href="css/themes/todo.css" />
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.css" />
-	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.js"></script>
-</head> 
-<body> 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>
+        </title>
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+        <link rel="stylesheet" href="css/themes/todo.css" />
+        <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
+        <style>
+            /* App custom styles */
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.js">
+        </script>
+        <script src="jqm.js">
+        </script>
+    </head>
+    <body>
+        <!-- Home -->
+        <div data-role="page" id="Home" data-theme="a">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    ToDo List
+                </h3>
+                <a data-role="button" data-transition="fade" data-theme="a" href="#page1" data-icon="grid" data-iconpos="left" class="ui-btn-right">
+                </a>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#page1" data-theme="a" data-icon="">
+                                One
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#page1" data-theme="" data-icon="">
+                                Two
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#page1" data-theme="a" data-icon="">
+                                Three
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <a data-role="button" data-transition="fade" data-theme="a" href="#page1" data-icon="grid" data-iconpos="left" class="ui-btn-right">
+                    Menu
+                </a>
+            </div><!-- /header -->
+             		
+            <div data-role="content" style="padding: 15px" data-theme="a">
+                <p> Keeping track has never been easier!</p>
+                
+                <a data-role="button" data-theme="a" data-icon="arrow-r" data-iconpos="left" href="#page2" />
+                	Start Here!
+                </a>
+            </div>
+            <div data-theme="a" data-role="footer" data-position="fixed">
+                <h3>
+                    ©2012<br /> Jon Roundy
+                </h3>
+            </div>
+        </div>
+        	</div><!-- /footer -->
+</div><!-- /home -->
 
-<div data-role="page">
-
-	<div data-role="header">
-		<h1>ToDo List</h1>
-	</div><!-- /header -->
-
-	<div data-role="content">	
-		<p>Hello world</p>		
-	
-	<ul data-role="listview" data-inset="true" data-filter="true">
-	<li><a href="#">Acura</a></li>
-	<li><a href="#">Audi</a></li>
-	<li><a href="#">BMW</a></li>
-	<li><a href="#">Cadillac</a></li>
-	<li><a href="#">Ferrari</a></li>
-</ul>
-	</div><!-- /content -->
-
-</div><!-- /page -->
-
-</body>
+<!-- Start of second page -->
+<div data-role="page" id="page2" data-theme="a">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    ToDo List
+                </h3>
+                <a data-role="button" data-transition="fade" href="index.html" data-icon="home" data-iconpos="left" class="ui-btn-left">
+                    Home
+                </a>
+                <a data-role="button" data-transition="fade" href="#page1" data-icon="grid" data-iconpos="left" class="ui-btn-right">
+                    Menu
+                </a>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#" id="clear" data-theme="" data-icon="delete">
+                                Clear Data
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="displayLink" data-theme="" data-icon="info">
+                                Display Data
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="searchinput1">
+                        </label>
+                        <input name="" id="searchinput1" placeholder="search here" value="" type="search" />
+                    </fieldset>
+                </div>
+            </div>
+            <div data-role="content" style="padding: 15px" >
+                <h2>
+                    Task Info
+                </h2>
+                <h5>
+                    *Fields are required.
+                </h5>
+                <div data-role="fieldcontain" id="select" name="selectmenu1">
+                <label for="textinput1">
+                            *Select Category:
+                        </label>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput1">
+                            *Task Name:
+                        </label>
+                        <input name="" id="textinput1" placeholder="e.g Project due soon!" value="" type="text" />
+                    </fieldset>
+                    
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput2">
+                            *Date:
+                        </label>
+                        <input name="" id="textinput2" placeholder="Month/Day/Year" value="" type="date" />
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textinput3">
+                            *Time
+                        </label>
+                        <input name="" id="textinput3" placeholder="12:00 PM" value="" type="time" />
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-type="vertical">
+                        <legend>
+                            Urgent!
+                        </legend>
+                        <input name="checkbox1" id="checkbox1" type="checkbox" />
+                        <label for="checkbox1">
+                        </label>
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="slider1">
+                            Estimated time to complete ( In Hours)
+                        </label>
+                        <input name="slider" id="slider1" value="0" min="0" max="24" data-highlight="true" type="range" />
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textarea1">
+                            Notes:
+                        </label>
+                        <textarea name="" id="textarea1" placeholder="Enter notes here...">
+                        </textarea>
+                    </fieldset>
+                </div>
+                <a data-role="button" data-transition="fade" data-theme="a" href="#page1">
+                    Save Task
+                </a>
+            </div>
+            <div data-theme="a" data-role="footer" data-position="fixed">
+                <h3>
+                    Footer
+                </h3>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+        
+        <script src="js/json.js" type="text/javascript"></script>
+    	<script src="js/main.js" type="text/javascript"></script>
+    	<script src="js/page2.js" type="text/javascript"></script>
+    </body>
 </html>
