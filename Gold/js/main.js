@@ -71,8 +71,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			//Gather up all our form field values and store in an object.
 			//Object properties are going to contain array with the form label and input value
 			getCheckboxVault();
-			
-		var item					= {};
+		var item				= {};
 			item.cats				= ["Category List: ", g("groups").value];
 			item.taskname			= ["My Task Name: ", g("taskname").value];
 			item.date				= ["Date: ", g("date").value];
@@ -98,7 +97,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		var makeList = document.createElement('ul');
 		makeDiv.appendChild(makeList);
 		document.body.appendChild(makeDiv);
-		
+		g('items').style.display = "block";
 		for(var i=0, len=localStorage.length; i<len;i++){
 			var makeli = document.createElement('li');
 			var linksLi = document.createElement('li');
@@ -211,6 +210,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		var ask = confirm("Are you sure you want to delete this task?");
 		if(ask){
 			localStorage.removeItem(this.key);
+			alert("Entry was deleted");
 			window.location.reload();
 		}else{
 			alert("Task was not deleted!");
@@ -237,8 +237,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		var getTime = g('time');
 		
 		//Reset Error Messages
-		//console.log(errMsg);
-		errMsg.trigger('create') = "";
+		console.log(errMsg);
+		errMsg.innerHTML = "";
 		getCats.style.border = "1px solid black";
 		getTaskName.style.border = "1px solid black";
 		getDate.style.border = "1px solid black";
@@ -254,7 +254,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			getCats.style.border = "1px solid red";
 			messageAry.push(catsError);
 		}
-		alert(messageAry);
+		
 		//Task Name Validation
 		if(getTaskName.value === ''){
 			var tNameError = "Please enter a task name.";
@@ -280,8 +280,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		if(messageAry.length >= 1){
 			for(var i=0, j=messageAry.length; i < j; i++){
 				var txt = document.createElement('li');
-				console.log(messageAry);
-				txt.trigger('create') = messageAry[i];
+				txt.innerHTML = messageAry[i];
 				errMsg.appendChild(txt);
 			}
 			eData.preventDefault();
