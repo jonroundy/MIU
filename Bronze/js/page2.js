@@ -8,7 +8,7 @@
       this.element.addClass('ui-footer ui-footer-fixed ui-bar-' + theme);
 
       // Make sure the page has padding added to it to account for the fixed bar
-      this.element.closest('[data-role="page"]').addClass('ui-page-footer-fixed');
+      this.element.closest('[data-role="page2"]').addClass('ui-page-footer-fixed');
 
 
       // Call the NavBar _create prototype
@@ -162,7 +162,9 @@ $.fn.buttonMarkup = function( options ) {
 		}
 		
 		if ( o.inline !== undefined ) {			
-
+			// Used to control styling in headers/footers, where buttons default to `mini` style.
+			buttonClass += o.inline === false ? " ui-btn-block" : " ui-btn-inline";
+		}
 		
 		
 		if ( o.icon ) {

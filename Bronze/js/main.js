@@ -169,7 +169,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		
 		//add horizontal line
 		var hrTag = document.createElement('hr');
-		linksLi.appendChild(hrTag)
+		linksLi.appendChild(hrTag);
 	}
 	
 	function editItem(){
@@ -235,7 +235,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		var getTime = g('time');
 		
 		//Reset Error Messages
-		errMsg.innerHTML = "";
+		errMsg = "";
 		getCats.style.border = "1px solid black";
 		getTaskName.style.border = "1px solid black";
 		getDate.style.border = "1px solid black";
