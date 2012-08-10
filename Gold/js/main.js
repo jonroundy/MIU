@@ -18,6 +18,7 @@ window.addEventListener("DOMContentLoaded", function(){
 				selectLi = g('select'),
 				makeSelect = document.createElement('select');
 				makeSelect.setAttribute("id", "groups");
+							console.log(makeSelect);
 			for(var i=0, j=categoryLists.length; i<j; i++){
 				var makeOption = document.createElement('option');
 				var optText = categoryLists[i];
@@ -70,7 +71,8 @@ window.addEventListener("DOMContentLoaded", function(){
 			//Gather up all our form field values and store in an object.
 			//Object properties are going to contain array with the form label and input value
 			getCheckboxVault();
-		var item				= {};
+			
+		var item					= {};
 			item.cats				= ["Category List: ", g("groups").value];
 			item.taskname			= ["My Task Name: ", g("taskname").value];
 			item.date				= ["Date: ", g("date").value];
@@ -96,7 +98,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		var makeList = document.createElement('ul');
 		makeDiv.appendChild(makeList);
 		document.body.appendChild(makeDiv);
-		g('items').style.display = "block";
+		
 		for(var i=0, len=localStorage.length; i<len;i++){
 			var makeli = document.createElement('li');
 			var linksLi = document.createElement('li');
@@ -155,7 +157,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		linksLi.appendChild(editLink);
 		
 		//add line break
-		var breakTag = document.createElement('br');
+		breakTag();
 		linksLi.appendChild(breakTag);
 		
 		//add delete single item link
@@ -169,7 +171,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		
 		//add horizontal line
 		var hrTag = document.createElement('hr');
-		linksLi.appendChild(hrTag)
+		linksLi.appendChild(hrTag);
 	}
 	
 	function editItem(){
@@ -235,7 +237,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		var getTime = g('time');
 		
 		//Reset Error Messages
-		errMsg.innerHTML = "";
+		//console.log(errMsg);
+		errMsg.trigger('create') = "";
 		getCats.style.border = "1px solid black";
 		getTaskName.style.border = "1px solid black";
 		getDate.style.border = "1px solid black";
@@ -251,7 +254,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			getCats.style.border = "1px solid red";
 			messageAry.push(catsError);
 		}
-		
+		alert(messageAry);
 		//Task Name Validation
 		if(getTaskName.value === ''){
 			var tNameError = "Please enter a task name.";
@@ -277,7 +280,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		if(messageAry.length >= 1){
 			for(var i=0, j=messageAry.length; i < j; i++){
 				var txt = document.createElement('li');
-				txt.innerHTML = messageAry[i];
+				console.log(messageAry);
+				txt.trigger('create') = messageAry[i];
 				errMsg.appendChild(txt);
 			}
 			eData.preventDefault();

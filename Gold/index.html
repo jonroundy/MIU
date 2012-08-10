@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>
-        </title>
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
-        <link rel="stylesheet" href="css/themes/todo.css" />
-        <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
-        <link rel="stylesheet" href="css/page2.css" media="screen" type="text/css"/>
+<head>
+
+	<meta charset="utf-8" />
+
+    <title>ToDo List</title>
+        
+    <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+    
+    <!-- StyleSheets under here -->
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+    <link rel="stylesheet" href="css/themes/todo.css" />
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
+    <link rel="stylesheet" href="css/page2.css" media="screen" type="text/css"/>
+    	
+    	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+    
     </head>
     <body>
         <!-- Home -->
@@ -62,9 +76,7 @@
 <!-- Start of second page -->
 <div data-role="page" id="page2" data-theme="a">
             <div data-theme="a" data-role="header">
-                <h3>
-                    ToDo List
-                </h3>
+                <h3>ToDo List</h3>
                 <a data-role="button" data-transition="fade" href="index.html" data-icon="home" data-iconpos="left" class="ui-btn-left">
                     Home
                 </a>
@@ -83,6 +95,8 @@
                                 Display Data
                             </a>
                         </li>
+                        
+                      <!--<a href="#page2" id="addNew" style="display:none; " data-icon="plus">Add New Item</a>-->
                     </ul>
                 </div>
                 <div data-role="fieldcontain">
@@ -93,85 +107,81 @@
                     </fieldset>
                 </div>
             </div>
-            <div data-role="content" style="padding: 15px" id="taskForm">
+            <form action="#" method="post" id="taskForm">
+            	<fieldset id="task">
+            <div data-role="content" style="padding: 15px">
                
-                <h2>
-                    Task Info
-                </h2>
-                <h5 id="req">
-                    *Fields are required.
-                </h5>
-                <div data-role="fieldcontain" id="req" name="selectmenu1">
-                <label for="textinput1">
-                            *Select Category:
-                        </label>
+               <legend id="htask"><h5>Task Info</h5></legend>
+                
+                <span id="req">* fields are required.</span>
+                
+                <div data-role="fieldcontain" id="select" >
+                
+                <label for="textinput1" id="selecct"> *Select Category:</label>
                 </div>
                 <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup" id="task">
-                        <label for="taskname">
-                            *Task Name:
-                        </label>
+                    
+                        
+                        <label for="taskname">*My task name:</label>
+                        
                         <input name="" id="taskname" placeholder="e.g Project due soon!" value="" type="text" />
-                    </fieldset>
+                    
+                    
+                </div>
+                <div data-role="fieldcontain" >
+                   
+                        
+                        <label for="date"> *Date:</label>
+                        
+                        <input name="" id="date" placeholder="Month/Day/Year" value="" type="date" />
                     
                 </div>
                 <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup" id="task">
-                        <label for="date">
-                            *Date:
-                        </label>
-                        <input name="" id="date" placeholder="Month/Day/Year" value="" type="date" />
-                    </fieldset>
-                </div>
-                <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup" id="task">
-                        <label for="time">
-                            *Time
-                        </label>
+                    
+                        
+                        <label for="time">*Time</label>
+                        
                         <input name="" id="time" placeholder="12:00 PM" value="" type="time" />
-                    </fieldset>
+                    
                 </div>
                 <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup" data-type="vertical" id="task">
-                        <legend>
-                            Urgent!
-                        </legend>
-                        <input name="checkbox" id="urgent" type="checkbox" />
-                        <label for="checkbox">
-                        </label>
-                    </fieldset>
+                    
+                        <input name="" id="checkbox1" type="checkbox" /> <label for="checkbox1">Urgent!</label>
+                    
                 </div>
                 <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup" id="task">
-                        <label for="slider1">
-                            Estimated time to complete ( In Hours)
-                        </label>
+                    
+                        
+                        <label for="slider1">Estimated time to complete ( In Hours)</label>
                         <input name="slider" id="slider1" value="0" min="1" max="24" data-highlight="true" type="range" />
-                    </fieldset>
+                    
+                    
                 </div>
                 <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup" id="task">
-                        <label for="textbox">
-                            Notes:
-                        </label>
+                    
+                       <label for="textbox">Notes:</label>
+                        
                         <textarea  name="" id="textbox" placeholder="Enter notes here...">
                         </textarea>
-                    </fieldset>
                 </div>
+                </fieldset>
                  <input data-theme="a" data-icon="arrow-r" data-iconpos="left" value="Save Task" type="submit" id="submit" />
             </div>
+            </form>
             <div data-theme="a" data-role="footer" data-position="fixed">
                 <h3>
                     Footer
                 </h3>
             </div><!-- /footer -->
         </div><!-- /page -->
+        
+        <!-- JavaScript under here -->
         <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
         <script src="js/json.js" type="text/javascript"></script>
         <script src="js/main.js" type="text/javascript"></script>
         <script src="js/page2.js" type="text/javascript"></script>
-    	<script src="jqm.js" type="text/javascript"></script>
+
     	
 
     </body>
