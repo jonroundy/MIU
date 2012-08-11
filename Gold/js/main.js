@@ -95,12 +95,12 @@ window.addEventListener("DOMContentLoaded", function(){
 		//Write Data from Local Storage to the browser.
 		var parent = document.getElementById("display"); // EBID For Display Page FIX FOR JQUERY Mobile BABY
 		var makeDiv = document.createElement('div');
-		makeDiv.setAttribute("data-role","content")
 		makeDiv.setAttribute("id", "items");
 		var makeList = document.createElement('ul');
 		makeDiv.appendChild(makeList);
 		parent.appendChild(makeDiv); // Fix for Jquery Mobile Call inside the page not the body of the index
-		g('items').style.display = "block";
+		makeList.setAttribute("style", "list-style:none; padding-left:2px;"); // Style Rules for ul
+		g('items');
 		for(var i=0, len=localStorage.length; i<len;i++){
 			var makeli = document.createElement('li');
 			var linksLi = document.createElement('li');
@@ -110,6 +110,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			//Convert the string from local storage value back to an object by using JSON.parse()
 			var obj = JSON.parse(value);
 			var makeSubList = document.createElement('ul');
+			makeSubList.setAttribute("style", "list-style:none; padding-left:2px;");
 			makeli.appendChild(makeSubList);
 			getImage(obj.cats[1], makeSubList);
 			for(var n in obj){
@@ -118,8 +119,10 @@ window.addEventListener("DOMContentLoaded", function(){
 			var optSubText = obj[n][0]+" "+obj[n][1];
 			makeSubli.innerHTML = optSubText;
 			makeSubList.appendChild(linksLi);
+			
 			}
 			makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons/links for each item in local storage.
+			
 		}
 	
 	}
@@ -130,6 +133,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		var newImg = document.createElement('img');
 		var setSrc = newImg.setAttribute("src", "images/"+ catName + ".png");
 		imageLi.appendChild(newImg);
+		
 	}
 	
 	// Auto Populate Local Storage
