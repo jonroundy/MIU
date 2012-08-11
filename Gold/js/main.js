@@ -18,7 +18,6 @@ window.addEventListener("DOMContentLoaded", function(){
 				selectLi = g('select'),
 				makeSelect = document.createElement('select');
 				makeSelect.setAttribute("id", "groups");
-							console.log(makeSelect);
 			for(var i=0, j=categoryLists.length; i<j; i++){
 				var makeOption = document.createElement('option');
 				var optText = categoryLists[i];
@@ -86,7 +85,7 @@ window.addEventListener("DOMContentLoaded", function(){
 }
 
 	function getData(){
-			toggleControls("on");	
+			toggleControls("on");
 				if(localStorage.length === 0){
 			alert("There are no task's to display. So default data was added.");
 			autoFillData();
@@ -110,11 +109,11 @@ window.addEventListener("DOMContentLoaded", function(){
 			makeli.appendChild(makeSubList);
 			getImage(obj.cats[1], makeSubList);
 			for(var n in obj){
-				var makeSubli = document.createElement('li');
-				makeSubList.appendChild(makeSubli);
-				var optSubText = obj[n][0]+" "+obj[n][1];
-				makeSubli.innerHTML = optSubText;
-				makeSubList.appendChild(linksLi);
+			var makeSubli = document.createElement('li');
+			makeSubList.appendChild(makeSubli);
+			var optSubText = obj[n][0]+" "+obj[n][1];
+			makeSubli.innerHTML = optSubText;
+			makeSubList.appendChild(linksLi);
 			}
 			makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons/links for each item in local storage.
 		}
@@ -156,7 +155,9 @@ window.addEventListener("DOMContentLoaded", function(){
 		linksLi.appendChild(editLink);
 		
 		//add line break
-		breakTag();
+		
+		
+		
 		linksLi.appendChild(breakTag);
 		
 		//add delete single item link
@@ -308,7 +309,31 @@ window.addEventListener("DOMContentLoaded", function(){
 	var save = g("submit");
 	save.addEventListener("click", validate);
 	
+ var search = new Array();
 
-	
+   for (i=0; i<=localStorage.length-1; i++) { // i<100 works perfectly
+   key = localStorage.key(i);
+   val = localStorage.getItem(key); 
+   value = val.split(","); //splitting string inside array to get name
+   name[i] = value[1]; // getting name from split string
+   }
+	 if (str.length==0) { 
+  document.getElementById("searchResult").innerHTML="";
+  }
+  else {
+      if(str.length > 0) {
+          var hint = "";
+          for(i=0;i<name.length;i++) {
+                if(str.toLowerCase() == (name[i].substr(0,str.length)).toLowerCase()) { //not sure about this line
+                    if(hint == "") {
+                            hint = name[i];
+                        } else {
+                            hint = hint + " <br /> " + name[i]; 
+
+                      }
+                }   
+            }
+      }
+}//End of search
 
 });

@@ -15,7 +15,7 @@
 	<meta http-equiv="cleartype" content="on">
     
     <!-- StyleSheets under here -->
-    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.css" />
     <link rel="stylesheet" href="css/themes/todo.css" />
     <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
     <link rel="stylesheet" href="css/page2.css" media="screen" type="text/css"/>
@@ -26,7 +26,7 @@
     </head>
     <body>
         <!-- Home -->
-        <div data-role="page" id="Home" data-theme="a">
+        <div data-role="page" id="index" data-theme="a">
             <div data-theme="a" data-role="header">
                 <h3>
                     ToDo List
@@ -74,31 +74,33 @@
 </div><!-- /home -->
 
 <!-- Start of second page -->
-<div data-role="page" id="page2" data-theme="a">
+<div data-role="page" id="page2" data-theme="a" data-add-back-btn="true">
             <div data-theme="a" data-role="header">
                 <h3>ToDo List</h3>
-                <a data-role="button" data-transition="fade" href="index.html" data-icon="home" data-iconpos="left" class="ui-btn-left">
-                    Home
+                
                 </a>
                 <a data-role="button" data-transition="fade" href="#page1" data-icon="grid" data-iconpos="left" class="ui-btn-right">
                     Menu
                 </a>
+                <nav id="nav2">
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>
-                            <a href="#" id="clear" data-theme="" data-icon="delete">
-                                Clear Data
+                            <a href="#clear" id="clear" data-theme="" data-icon="delete">
+                                Clear Stored Data
                             </a>
                         </li>
                         <li>
-                            <a href="#" id="displayLink" data-theme="" data-icon="info">
+                            <a href="#display" id="displayLink" data-theme="" data-icon="info">
                                 Display Data
                             </a>
                         </li>
-                        
+                        <li>
                       <a href="#page2" id="addNew" style="display:none; " data-icon="plus">Add New Item</a>
+                        </li>
                     </ul>
                 </div>
+                </nav>
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup">
                         <label for="searchinput1">
@@ -132,14 +134,25 @@
 
             <ul>
                 <li><label for="textbox"> Notes:</label><br>
-                <textarea rows="4" cols="30" id="textbox" placeholder="Enter notes here....">
+                <textarea id="textbox" placeholder="Enter notes here....">
 </textarea></li>
             
             </ul>
                 </fieldset>
-                 <input data-theme="a" data-icon="arrow-r" data-iconpos="left" value="Save Task" type="submit" id="submit" />
+                <a href="#save" data-role="button" data-icon="arrow-r" data-iconpos="left" id="submit">Submit</a>
             </div>
             </form>
+            
+            <!-- Start of Display page -->
+<div data-role="page" id="display" data-theme="a" data-add-back-btn="true">
+            <div data-theme="a" data-role="header">
+                <h3>ToDo List</h3>
+                
+                </a>
+                <a data-role="button" data-transition="fade" href="#page1" data-icon="grid" data-iconpos="left" class="ui-btn-right">
+                    Menu
+                </a>
+                           
             <div data-theme="a" data-role="footer" data-position="fixed">
                 <h3>
                     Footer
@@ -148,8 +161,8 @@
         </div><!-- /page -->
         
         <!-- JavaScript under here -->
-        <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.js"></script>
         <script src="js/json.js" type="text/javascript"></script>
         <script src="js/main.js" type="text/javascript"></script>
         <script src="js/page2.js" type="text/javascript"></script>
