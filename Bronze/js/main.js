@@ -93,9 +93,10 @@ window.addEventListener("DOMContentLoaded", function(){
 		//Write Data from Local Storage to the browser.
 		var makeDiv = document.createElement('div');
 		makeDiv.setAttribute("id", "items");
+		
 		var makeList = document.createElement('ul');
 		makeDiv.appendChild(makeList);
-		document.body.appendChild(makeDiv);
+		document.div('display').appendChild(makeDiv);
 		g('items').style.display = "block";
 		for(var i=0, len=localStorage.length; i<len;i++){
 			var makeli = document.createElement('li');
@@ -209,6 +210,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		var ask = confirm("Are you sure you want to delete this task?");
 		if(ask){
 			localStorage.removeItem(this.key);
+			alert("Entry was deleted");
 			window.location.reload();
 		}else{
 			alert("Task was not deleted!");
@@ -235,7 +237,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		var getTime = g('time');
 		
 		//Reset Error Messages
-		errMsg = "";
+		errMsg.innerHTML = "";
 		getCats.style.border = "1px solid black";
 		getTaskName.style.border = "1px solid black";
 		getDate.style.border = "1px solid black";
