@@ -50,9 +50,39 @@
                         </li>
                     </ul>
                 </div>
-                <a data-role="button" data-transition="fade" data-theme="a" href="#" data-icon="grid" data-iconpos="left" class="ui-btn-right">
+                <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">
                     Menu
                 </a>
+                <div data-role="popup" id="menu">
+                     <ul style="list-style: none; padding-left: 2px;">
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                Personal
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                School
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                Grocery
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                Work
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                Misc
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
             </div><!-- /header -->
              		
             <div data-role="content" style="padding: 15px" data-theme="a">
@@ -76,9 +106,38 @@
             <div data-theme="a" data-role="header" data-position="fixed">
                 <h3>ToDo List</h3>
                 
-                <a data-role="button" data-transition="fade" href="#" data-icon="grid" data-iconpos="left" class="ui-btn-right">
+                <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">
                     Menu
                 </a>
+            <div data-role="popup" id="menu">
+                     <ul style="list-style: none; padding-left: 2px;">
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                Personal
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                School
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                Grocery
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                Work
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                Misc
+                            </a>
+                        </li>
+                    </ul>
+                </div>
                 <nav id="nav2">
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
@@ -88,7 +147,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#display" id="displayLink" data-theme="" data-icon="info">
+                       
+                            <a href="#display" id="displayLink" data-theme="" data-icon="info" data-ajax="false">
                                 Display Data
                             </a>
                         </li>
@@ -134,7 +194,7 @@
             </ul>
                 </fieldset>
                 <a href="#save" data-role="button" data-icon="arrow-r" data-iconpos="left" id="submit">Submit</a>
-           
+            
             </form>
                         <div data-theme="a" data-role="footer" data-position="fixed">
                 <h3>
@@ -144,21 +204,52 @@
 </div><!-- /page -->
             
             <!-- ========== Start of Display page =========== -->
-<div data-role="page" id="display" data-theme="a" data-add-back-btn="true" style="list-style:none; padding-left:2px;">
+<div data-role="page" id="display" data-theme="a" data-add-back-btn="true">
             
             <div data-theme="a" data-role="header" data-position="fixed">
                 <h3>ToDo List</h3>
-                <a data-role="button" data-transition="fade" href="#" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">
+                Menu
+                </a>
+                <div data-role="popup" id="menu" data-rel="back">
+                     <ul style="list-style: none; padding-left: 2px;">
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                Personal
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                School
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                Grocery
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                Work
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                Misc
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div><!-- Header -->
                 
                 <nav id="nav2">
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>
-                            <a href="#" id="clear" data-theme="a" data-icon="delete">Clear Stored Data</a>
+                            <a href="#" id="clear" data-theme="a" data-icon="delete" data-ajax="false">Clear Stored Data</a>
                         </li>
                         <li>
-                      <a href="#page2" id="addNew" data-theme="a" style="" data-icon="plus">Add New Item</a>
+                      <a href="#page2" id="addNew" data-theme="a" style="" data-icon="plus" data-ajax="false">Add New Item</a>
                         </li>
                     </ul>
                 </div>
