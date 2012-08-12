@@ -313,21 +313,38 @@ window.addEventListener("DOMContentLoaded", function(){
 	var save = g("submit");
 	save.addEventListener("click", validate);
 	
+
 	
-$('#menu').popup("close")
+//$('#menu').popup("close") // Works but has Uncaught error in console. Need to debug and revalidate code.
+//Start Search Function
 
-
-// Google Internal Site Search script- By JavaScriptKit.com (http://www.javascriptkit.com)
-// For this and over 400+ free scripts, visit JavaScript Kit- http://www.javascriptkit.com/
-// This notice must stay intact for use
-
-//Enter domain of site to search.
-var domainroot="http://jonroundyfs.github.com/MIU/"
-
-function Gsitesearch(curobj){
-curobj.q.value="site:"+domainroot+" "+curobj.qfront.value
+/* search is the function to search contents in website */
+function search(frm) {
+var items = localStorage;
+  
+    if(frm.srchval.value=="" )
+         alert("please enter the search word");
+    else
+    {
+    
+        txt = frm.srchval.value.split(" ");
+        fnd = new Array(); total=0;
+        j = 0;
+        for (i = 0; i < items.length; i++) 
+        {
+            fnd[i] = 0; 
+           
+            for (k = 0; k < txt.length; k++)
+            if ((items[i].taskname.indexOf(txt[k]) > -1 || items[i].taskname.toLowerCase().indexOf(txt[k]) > -1 || items[i].taskname.toUpperCase().indexOf(txt[k]) > -1) && txt[k] != "")
+            
+            fnd[i] += (j+1);
+            console.log(items[i].key);
+        }
+      
+        //win.document.write("</table><b><hr>Total found:</b> "+total+"<br></font></body></html>");
+        //win.document.close();
+    }
 }
-
-
-
 });
+
+
