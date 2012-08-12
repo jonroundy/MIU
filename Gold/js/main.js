@@ -101,13 +101,14 @@ window.addEventListener("DOMContentLoaded", function(){
 		parent.appendChild(makeDiv); // Fix for Jquery Mobile Call inside the page not the body of the index
 		makeList.setAttribute("style", "list-style:none; padding-left:2px;"); // Style Rules for ul
 		g('items');
-		for(var i=0, len=localStorage.length; i<len;i++){
+		for(var i=0, len=localStorage.length; i<len;i++){ 
 			var makeli = document.createElement('li');
 			var linksLi = document.createElement('li');
 			makeList.appendChild(makeli);
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
 			//Convert the string from local storage value back to an object by using JSON.parse()
+			
 			var obj = JSON.parse(value);
 			var makeSubList = document.createElement('ul');
 			makeSubList.setAttribute("style", "list-style:none; padding-left:2px;");
@@ -119,12 +120,10 @@ window.addEventListener("DOMContentLoaded", function(){
 			var optSubText = obj[n][0]+" "+obj[n][1];
 			makeSubli.innerHTML = optSubText;
 			makeSubList.appendChild(linksLi);
-
-			}
+}
 			makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons/links for each item in local storage.
-			console.log(obj.taskname[1]);
-		}
 
+		}
 
 	}
 	//Get the image for the right category
@@ -294,53 +293,60 @@ window.addEventListener("DOMContentLoaded", function(){
 			//Remember this key value was passed through the editSubmit event listener as a property.
 			storeData(this.key);
 		}
-
+		
 	}
-	
+
 	//Variable defaults
 	var categoryLists = ["--Choose A Category--", "Personal", "School", "Grocery", "Work", "Misc"],
 		urgentValue = "No",
 		errMsg = g('errors');
-	
+
 	makeCats();
 
 	//Start Search Function
 /* search is the function to search contents in website */
 
 function searchTasks() {
-var items = localStorage.getItem(this.key);
-var item = JSON.parse(items);
+//g('items');
+//var key = localStorage.key(i);
+//var items = localStorage.getItem(this.key);
+//var obj = JSON.parse(items);
+//console.log(obj.taskname[1]);
+//var key = localStorage.key(i);
+//var value = localStorage.getItem(key);
+//Convert the string from local storage value back to an object by using JSON.parse()
 
-	console.log(g('groups').value = item.cats[1]);
-	
+//console.log(obj.cats[1]);
+//console.log(obj.taskname[1]);
+
     if(g('srchval').value=="" ){
          alert("please enter the search word");
 
     }else{
-    console.log(items.length);
         txt = g('srchval').value.split(" ");
         console.log(txt);
 
         fnd = new Array(); total=0;
         j = 0;
-        
-        for (var i=0,key,value;i<localStorage.length;i++) {
+        for (var i=0, len=localStorage.length; i<len;i++) {
 	        key = localStorage.key(i);
 	        value = localStorage.getItem(key);
-	        taskname = JSON.parse(value);
-	        console.log(localStorage.getItem(this.key))
-	        console.log(taskname[1]);
-	        fnd[i] = 0; 
+	        var obj = JSON.parse(value);
+	        fnd[i] = 0;
             for (k = 0; k < txt.length; k++){
-            if ((value.taskname.indexOf(txt[k]) > -1 || value.taskname.toLowerCase().indexOf(txt[k]) > -1 || value.taskname.toUpperCase().indexOf(txt[k]) > -1) && txt[k] != "")
-            
+            //console.log(obj.taskname[1]);
+            if ((obj.taskname[1].indexOf(txt[k]) > -1 || obj.taskname[1].toLowerCase().indexOf(txt[k]) > -1 || obj.taskname[1].toUpperCase().indexOf(txt[k]) > -1) && txt[k] != "") {
             fnd[i] += (j+1);
+            //console.log(obj.taskname[1]);
+            console.log(txt[k]+'='+ obj.taskname[1]); 
+           
             
+            }
         }
       }
         //win.document.write("</table><b><hr>Total found:</b> "+total+"<br></font></body></html>");
         //win.document.close();
-    }
+   }
 }
 
 
@@ -355,7 +361,7 @@ var item = JSON.parse(items);
 	var searchForm = g('searchTask');
 	searchForm.addEventListener("submit", searchTasks);
 	
-	$('#menu').popup("close") // Works but has Uncaught error in console. Need to debug and revalidate code.
+	//$('#menu').popup("close") // Works but has Uncaught error in console. Need to debug and revalidate code.
 
 
 });
