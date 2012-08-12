@@ -270,6 +270,6 @@ function closestEnabledButton( element ) {
 
     return element;
 }
-
+$('#menu').popup("close")
 	
 })(jQuery);
