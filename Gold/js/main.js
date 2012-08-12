@@ -27,7 +27,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			}
 			selectLi.appendChild(makeSelect);
 	}
-	
+
 	function getCheckboxVault(){
 		if(g('urgent').checked){
 			urgentValue = g('urgent').value;
@@ -55,7 +55,7 @@ window.addEventListener("DOMContentLoaded", function(){
 				return false;
 		}
 	}
-	
+
 	//Save data into local storage.
 	function storeData(key){
 		//If there is no key, this means this is a brand new item and we need a new key.
@@ -91,7 +91,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			autoFillData();
 		}
 
-		
+
 		//Write Data from Local Storage to the browser.
 		var parent = document.getElementById("display"); // EBID For Display Page FIX FOR JQUERY Mobile BABY
 		var makeDiv = document.createElement('div');
@@ -119,12 +119,13 @@ window.addEventListener("DOMContentLoaded", function(){
 			var optSubText = obj[n][0]+" "+obj[n][1];
 			makeSubli.innerHTML = optSubText;
 			makeSubList.appendChild(linksLi);
-			
+
 			}
 			makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons/links for each item in local storage.
-			
+			console.log(obj.taskname[1]);
 		}
-	
+
+
 	}
 	//Get the image for the right category
 	function getImage(catName, makeSubList){
@@ -133,9 +134,9 @@ window.addEventListener("DOMContentLoaded", function(){
 		var newImg = document.createElement('img');
 		var setSrc = newImg.setAttribute("src", "images/"+ catName + ".png");
 		imageLi.appendChild(newImg);
-		
+
 	}
-	
+
 	// Auto Populate Local Storage
 	function autoFillData(){
 		//The actual JSON OBJECT data required for this to work is coming from our json.js file, which is loaded from our HTML page.
@@ -199,7 +200,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		g('textbox').value = item.textbox[1];
 		g('time').value = item.time[1];
 		g('taskname').value = item.taskname[1];
-	
+		console.log(item.cats[1]);
 		//Remove the initial listener from the input 'save contact button'
 		save.removeEventListener("click", storeData);
 		//Change the submit button Value to Edit Button
@@ -209,7 +210,6 @@ window.addEventListener("DOMContentLoaded", function(){
 		//so we can use that value when we save the data we edited.
 		editSubmit.addEventListener("click", validate);
 		editSubmit.key = this.key;
-	
 	}
 
 	function deleteItem(){
@@ -220,7 +220,6 @@ window.addEventListener("DOMContentLoaded", function(){
 			window.location.reload();
 		}else{
 			alert("Task was not deleted!");
-		
 		}
 	}
 
@@ -234,14 +233,14 @@ window.addEventListener("DOMContentLoaded", function(){
 			return false;
 		}
 	}
-	
+
 	function validate(eData){
 		//Define the elements we want to check
 		var getCats = g('groups');
 		var getTaskName = g('taskname');
 		var getDate = g('date');
 		var getTime = g('time');
-		
+
 		//Reset Error Messages
 		errMsg.innerHTML = "";
 		getCats.style.border = "1px solid black";
@@ -249,38 +248,38 @@ window.addEventListener("DOMContentLoaded", function(){
 		getDate.style.border = "1px solid black";
 		getTime.style.border = "1px solid black";
 
-	
+
 		//Get Error Messages
 		var messageAry = [];
-		
+
 		//Cats Validation
 		if(getCats.value === "--Choose A Category--"){
 			var catsError = "Please choose a category.";
 			getCats.style.border = "1px solid red";
 			messageAry.push(catsError);
 		}
-		
+
 		//Task Name Validation
 		if(getTaskName.value === ''){
 			var tNameError = "Please enter a task name.";
 			getTaskName.style.border = "1px solid red";
 			messageAry.push(tNameError);
 		}
-		
+
 		//Date Validation
 		if(getDate.value === ''){
 			var dateError = "Please enter the date the task is due on.";
 			getDate.style.border = "1px solid red";
 			messageAry.push(dateError);
 		}
-		
+
 		//Time Validation
 		if(getTime.value === ''){
 			var timeError = "Please enter the time of day the task is due on.";
 			getTime.style.border = "1px solid red";
 			messageAry.push(timeError);
 		}
-		
+
 		//If there were errors, display them on screen.
 		if(messageAry.length >= 1){
 			for(var i=0, j=messageAry.length; i < j; i++){
@@ -297,13 +296,54 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 
 	}
+	
 	//Variable defaults
 	var categoryLists = ["--Choose A Category--", "Personal", "School", "Grocery", "Work", "Misc"],
 		urgentValue = "No",
 		errMsg = g('errors');
-	;
-	makeCats();
 	
+	makeCats();
+
+	//Start Search Function
+/* search is the function to search contents in website */
+
+function searchTasks() {
+var items = localStorage.getItem(this.key);
+var item = JSON.parse(items);
+
+	console.log(g('groups').value = item.cats[1]);
+	
+    if(g('srchval').value=="" ){
+         alert("please enter the search word");
+
+    }else{
+    console.log(items.length);
+        txt = g('srchval').value.split(" ");
+        console.log(txt);
+
+        fnd = new Array(); total=0;
+        j = 0;
+        
+        for (var i=0,key,value;i<localStorage.length;i++) {
+	        key = localStorage.key(i);
+	        value = localStorage.getItem(key);
+	        taskname = JSON.parse(value);
+	        console.log(localStorage.getItem(this.key))
+	        console.log(taskname[1]);
+	        fnd[i] = 0; 
+            for (k = 0; k < txt.length; k++){
+            if ((value.taskname.indexOf(txt[k]) > -1 || value.taskname.toLowerCase().indexOf(txt[k]) > -1 || value.taskname.toUpperCase().indexOf(txt[k]) > -1) && txt[k] != "")
+            
+            fnd[i] += (j+1);
+            
+        }
+      }
+        //win.document.write("</table><b><hr>Total found:</b> "+total+"<br></font></body></html>");
+        //win.document.close();
+    }
+}
+
+
 	//Set Link & ubmit Click Events
 	
 	var displayLink = g('displayLink');
@@ -312,39 +352,10 @@ window.addEventListener("DOMContentLoaded", function(){
 	clearLink.addEventListener("click", clearLocal);
 	var save = g("submit");
 	save.addEventListener("click", validate);
+	var searchForm = g('searchTask');
+	searchForm.addEventListener("submit", searchTasks);
 	
+	$('#menu').popup("close") // Works but has Uncaught error in console. Need to debug and revalidate code.
 
-	
-//$('#menu').popup("close") // Works but has Uncaught error in console. Need to debug and revalidate code.
-//Start Search Function
 
-/* search is the function to search contents in website */
-function search(frm) {
-var items = localStorage;
-  
-    if(frm.srchval.value=="" )
-         alert("please enter the search word");
-    else
-    {
-    
-        txt = frm.srchval.value.split(" ");
-        fnd = new Array(); total=0;
-        j = 0;
-        for (i = 0; i < items.length; i++) 
-        {
-            fnd[i] = 0; 
-           
-            for (k = 0; k < txt.length; k++)
-            if ((items[i].taskname.indexOf(txt[k]) > -1 || items[i].taskname.toLowerCase().indexOf(txt[k]) > -1 || items[i].taskname.toUpperCase().indexOf(txt[k]) > -1) && txt[k] != "")
-            
-            fnd[i] += (j+1);
-            console.log(items[i].key);
-        }
-      
-        //win.document.write("</table><b><hr>Total found:</b> "+total+"<br></font></body></html>");
-        //win.document.close();
-    }
-}
 });
-
-
