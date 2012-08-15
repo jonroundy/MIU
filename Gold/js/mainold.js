@@ -24,7 +24,6 @@ window.addEventListener("DOMContentLoaded", function(){
 				makeOption.setAttribute("value", optText);
 				makeOption.innerHTML = optText;
 				makeSelect.appendChild(makeOption);
-				
 			}
 			selectLi.appendChild(makeSelect);
 	}
@@ -49,14 +48,14 @@ window.addEventListener("DOMContentLoaded", function(){
 				g('taskForm').style.display = "block";
 				g('clear').style.display = "inline";
 				g('displayLink').style.display = "inline";
-			g('addNew').style.display = "none";
+				g('addNew').style.display = "none";
 				g('items').style.display = "none";
 				break;
 			default:
 				return false;
 		}
 	}
-	console.log(toggleControls.length);
+
 	//Save data into local storage.
 	function storeData(key){
 		//If there is no key, this means this is a brand new item and we need a new key.
@@ -71,8 +70,8 @@ window.addEventListener("DOMContentLoaded", function(){
 			//Gather up all our form field values and store in an object.
 			//Object properties are going to contain array with the form label and input value
 			getCheckboxVault();
-		var item					= {};
-			item.cats				= ["Category List: ", g("groups").value,];
+		var item				= {};
+			item.cats				= ["Category List: ", g("groups").value];
 			item.taskname			= ["My Task Name: ", g("taskname").value];
 			item.date				= ["Date: ", g("date").value];
 			item.time				= ["Time: ", g("time").value];
@@ -91,35 +90,25 @@ window.addEventListener("DOMContentLoaded", function(){
 			alert("There are no task's to display. So default data was added.");
 			autoFillData();
 		}
-		//makeList.setAttribute("data-theme", "d");
-		//makeList.setAttribute("data-filter-placeholder", "Search Tasks...");
-		//makeList.setAttribute("data-split-icon", "check");
-		//makeList.setAttribute("data-inset", "true");
-		//makeList.setAttribute("data-filter", "true");
-		//makeList.setAttribute("data-inset", "true");
-		
-		
-		
-		// Write Data from Local Storage to the browser.
-		var parent = document.getElementById("display"); // EBID For Display Page FIX FOR JQUERY Mobile
+
+
+		//Write Data from Local Storage to the browser.
+		var parent = document.getElementById("display"); // EBID For Display Page FIX FOR JQUERY Mobile BABY
 		var makeDiv = document.createElement('div');
-		parent.appendChild(makeDiv); // Fix for Jquery Mobile Call inside the page not the body of the index
 		makeDiv.setAttribute("id", "items");
-		//makeDiv.setAttribute("data-autodividers", "true");
 		var makeList = document.createElement('ul');
-		
 		makeDiv.appendChild(makeList);
+		parent.appendChild(makeDiv); // Fix for Jquery Mobile Call inside the page not the body of the index
 		makeList.setAttribute("style", "list-style:none; padding-left:2px;"); // Style Rules for ul
-		makeList.setAttribute("data-role", "listview");
 		g('items');
 		for(var i=0, len=localStorage.length; i<len;i++){ 
 			var makeli = document.createElement('li');
 			var linksLi = document.createElement('li');
 			makeList.appendChild(makeli);
-			
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
 			//Convert the string from local storage value back to an object by using JSON.parse()
+			
 			var obj = JSON.parse(value);
 			var makeSubList = document.createElement('ul');
 			makeSubList.setAttribute("style", "list-style:none; padding-left:2px;");
@@ -139,7 +128,6 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	//Get the image for the right category
 	function getImage(catName, makeSubList){
-	
 		var imageLi = document.createElement('li');
 		makeSubList.appendChild(imageLi);
 		var newImg = document.createElement('img');
@@ -164,19 +152,19 @@ window.addEventListener("DOMContentLoaded", function(){
 		//add line break
 		var breakTag = document.createElement('br');
 		linksLi.appendChild(breakTag);
-
+		
 		//add edit single item link
 		var editLink = document.createElement('a');
-		editLink.href = "#page2";
+		editLink.href = "#";
 		editLink.key = key;
 		var editText = "Edit Task";
 		editLink.addEventListener("click", editItem);
 		editLink.innerHTML = editText;
 		linksLi.appendChild(editLink);
-
+		
 		//add line breakTag
 		linksLi.appendChild(breakTag);
-
+		
 		//add delete single item link
 		var deleteLink = document.createElement('a');
 		deleteLink.href = "#";
@@ -185,12 +173,12 @@ window.addEventListener("DOMContentLoaded", function(){
 		deleteLink.addEventListener("click", deleteItem);
 		deleteLink.innerHTML = deleteText;
 		linksLi.appendChild(deleteLink);
-
+		
 		//add horizontal line
 		var hrTag = document.createElement('hr');
 		linksLi.appendChild(hrTag);
 	}
-
+	
 	function editItem(){
 		//Grab the data from our item from Local Storage.
 		var value = localStorage.getItem(this.key);
@@ -198,7 +186,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		
 		//Show the form
 		toggleControls("off");
-		console.log(toggleControls.length);
+		
 		//populate the form fields with current localStorage values.
 		g('groups').value = item.cats[1];
 		g('date').value = item.date[1];
@@ -211,7 +199,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		g('textbox').value = item.textbox[1];
 		g('time').value = item.time[1];
 		g('taskname').value = item.taskname[1];
-		//console.log(item.cats[1]);
+		console.log(item.cats[1]);
 		//Remove the initial listener from the input 'save contact button'
 		save.removeEventListener("click", storeData);
 		//Change the submit button Value to Edit Button
@@ -258,6 +246,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		getTaskName.style.border = "1px solid black";
 		getDate.style.border = "1px solid black";
 		getTime.style.border = "1px solid black";
+
 
 		//Get Error Messages
 		var messageAry = [];
@@ -351,6 +340,7 @@ function searchTasks() {
             //console.log(obj.taskname[1]);
             console.log(txt[k]+'='+ obj.taskname[1]); 
            
+            
             }
         }
       }
@@ -371,19 +361,7 @@ function searchTasks() {
 	var searchForm = g('searchTask');
 	searchForm.addEventListener("submit", searchTasks);
 	
+	//$('#menu').popup("close") // Works but has Uncaught error in console. Need to debug and revalidate code.
 
-	
-	//$('#menu').popup("close"); // Works but has Uncaught error in console. Need to debug and revalidate code.
 
-	$("#taskList").listview({
-		autodividers: true,
-
-		autodividersSelector: function ( li ) {
-	var out = "";
-	return out;
-  }
-  })
-  
 });
-
-

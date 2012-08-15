@@ -270,6 +270,13 @@ function closestEnabledButton( element ) {
 
     return element;
 }
-$('#menu').popup("close")
+
+// My changes to be added to gold main
+
+$("#def").append("<ul id='abc'></ul>");
+$("#abc").append('<li><a href="#">111</a></li>');
+$("#abc").append('<li><a href="#">222</a></li>');
+$("#abc").append('<li><a href="#">333</a></li>');
+$("#def").navbar();
 	
 })(jQuery);
