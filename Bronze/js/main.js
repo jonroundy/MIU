@@ -1,8 +1,8 @@
 // Project 3: To Do List
-// Visual Frameworks (VFW)
+// MIU (Week 3)
 // Mobile Development
 // Jon Roundy
-// 1207 Week 2
+// 1208 Week 3
 
 window.addEventListener("DOMContentLoaded", function(){
 
@@ -101,21 +101,26 @@ window.addEventListener("DOMContentLoaded", function(){
 		
 		
 		// Write Data from Local Storage to the browser.
-		var parent = document.getElementById("display"); // EBID For Display Page FIX FOR JQUERY Mobile
-		var makeDiv = document.createElement('div');
-		parent.appendChild(makeDiv); // Fix for Jquery Mobile Call inside the page not the body of the index
-		makeDiv.setAttribute("id", "items");
+		var parent = document.getElementById("items"); // EBID For Display Page FIX FOR JQUERY Mobile
+		//var makeDiv = document.createElement('div');
+		//parent.appendChild(makeDiv); // Fix for Jquery Mobile Call inside the page not the body of the index
+		//makeDiv.setAttribute("id", "items");
+		//makeDiv.setAttribute("data-role","content");
 		//makeDiv.setAttribute("data-autodividers", "true");
 		var makeList = document.createElement('ul');
-		
-		makeDiv.appendChild(makeList);
-		makeList.setAttribute("style", "list-style:none; padding-left:2px;"); // Style Rules for ul
+		parent.appendChild(makeList);
+		//makeList.setAttribute("style", "list-style:none; padding-left:2px;"); // Style Rules for ul
 		makeList.setAttribute("data-role", "listview");
+		makeList.setAttribute("data-filter", "true");
 		g('items');
 		for(var i=0, len=localStorage.length; i<len;i++){ 
 			var makeli = document.createElement('li');
+			var makeAnc = document.createElement('a');
+			
 			var linksLi = document.createElement('li');
-			makeList.appendChild(makeli);
+			makeList.appendChild(makeAnc);
+			makeAnc.appendChild(newImg);
+			
 			
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
@@ -131,6 +136,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			var optSubText = obj[n][0]+" "+obj[n][1];
 			makeSubli.innerHTML = optSubText;
 			makeSubList.appendChild(linksLi);
+			
 }
 			makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons/links for each item in local storage.
 

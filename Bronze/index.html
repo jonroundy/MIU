@@ -8,23 +8,15 @@
     <meta name="description" content="Todo List App, Just add and stay on task">
     <meta name="keywords" content="productivity, time management, mobile app">
     <meta name="robots" content="index, follow">
-    <!--  Mobile viewport optimized: j.mp/bplateviewport -->
     <meta name="HandheldFriendly" content="True">
-	<meta name="MobileOptimized" content="320">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<!-- Mobile IE needs ClearType for smoothing fonts -->
-	<meta http-equiv="cleartype" content="on">
-    
     <!-- StyleSheets under here -->
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.css" />
     <link rel="stylesheet" href="css/themes/todo.css" />
-    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
-    <link rel="stylesheet" href="css/page2.css" media="screen" type="text/css"/>
-    	
-    	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="css/page2.css" media="screen" type="text/css" />
+    <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
 	<script src="js/libs/modernizr.custom.min.js"></script>
-    
     </head>
     <body>
         <!-- Home -->
@@ -33,26 +25,7 @@
                 <h3>
                     ToDo List
                 </h3>
-                <div data-role="navbar" data-iconpos="top">
-                    <ul>
-                        <li>
-                            <a href="construction.html" rel="external" data-theme="a" data-icon="">
-                                One
-                            </a>
-                        </li>
-                        <li>
-                            <a href="construction.html" rel="external" data-theme="" data-icon="">
-                                Two
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#about" rel="external" data-theme="a" data-icon="">
-                                About
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-          <div id="def"></div>
+          
                 <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Browse</a>
                 <div data-role="popup" id="menu">
                      <ul style="list-style: none; padding-left: 2px;">
@@ -98,27 +71,10 @@
             
 
                                 
-            
+           
             <div data-theme="a" data-role="footer" data-position="fixed">
-                 <div data-role="navbar" data-iconpos="top" >
-                    <ul>
-                        <li>
-                            <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="a" data-icon="">
-                                GitHub Pages
-                            </a>
-                        </li>
-                        <li>
-                            <a href="index.html" rel="external" data-theme="" data-icon="">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#about" rel="external" data-theme="a" data-icon="">
-                                About
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+	             <div id="botnav"></div>
+                
                 <h3>
                     ©2012<br /> Jon Roundy
                 </h3>
@@ -187,8 +143,8 @@
             <span id="req">* fields are required.</span>
             <ul id="errors"></ul>
             <ul style="list-style:none; padding-left:2px;">
-        		<li id="select" >*Select Category:</li>
-        		<br />
+        		<li id="select" >*Select Category:<br /></li>
+        		
                 	<li><label for="taskname">*My task name:</label> <input type="text" id="taskname" placeholder="e.g. project due soon!"></li>
                 <br />
                 	<li><label for="date">*Date: </label><input type="date" id="date"> </li>
@@ -199,7 +155,7 @@
                 <br />
                 	<li>Estimated amount of time task will take (In hours):</li>
             </ul>
-                <input id="slider1" type="range" min="1" max="24" step="1" /> 
+                <input id="slider1" type="range" min="1" max="24" step="1"/> 
         </fieldset> <!-- end of Task Info -->
         <fieldset id="optional">
             <legend id="hopt">Optional Fields</legend>
@@ -215,25 +171,7 @@
             
             </form>
             <div data-theme="a" data-role="footer" data-mini="true">
-                 <div data-role="navbar" data-iconpos="top" >
-                    <ul>
-                        <li>
-                            <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="a" data-icon="">
-                                GitHub Pages
-                            </a>
-                        </li>
-                        <li>
-                            <a href="index.html" rel="external" data-theme="" data-icon="">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#about" rel="external" data-theme="a" data-icon="">
-                                About
-                            </a>
-                        </li>
-                    </ul>
-                 </div>
+	            <div id="botnav2"></div>
          </div><!-- /footer -->
 </div><!-- /page -->
             
@@ -246,66 +184,49 @@
                 Browse
                 </a>
                 <div data-role="popup" id="menu">
-                     <ul style="list-style: none; padding-left: 2px;">
-                        <li>
-                            <a data-role="button" href="construction.html" rel="external" data-theme="a" data-icon="">
-                                Personal
-                            </a>
-                        </li>
-                        <li>
-                            <a data-role="button" href="construction.html" rel="external" data-theme="a" data-icon="">
-                                School
-                            </a>
-                        </li>
-                        <li>
-                            <a data-role="button" href="construction.html" rel="external" data-theme="a" data-icon="">
-                                Grocery
-                            </a>
-                        </li>
-                        <li>
-                            <a data-role="button" href="construction.html" rel="external" data-theme="a" data-icon="">
-                                Work
-                            </a>
-                        </li>
-                        <li>
-                            <a data-role="button" href="construction.html" rel="external" data-theme="a" data-icon="">
-                                Misc
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div><!-- Header -->
-                
-                <div data-role="content" id="tasks">
-                
                 </div>
                 
-                <nav id="nav2">
-                <div data-role="navbar" data-iconpos="top" data-mini="true" data-position="" >
+                <div data-role="navbar" data-iconpos="top" data-mini="true" data-position="">
                     <ul>
                         <li>
                             <a href="#page2" id="clear" data-theme="a" data-icon="delete" >Clear Stored Data</a>
-                        </li>
+                    </li>
                         <li>
                         	<a href="#page2" id="addNew" data-theme="a" style="" data-icon="plus">Add New Item</a>
                         </li>
                     </ul>
                 </div>
-                </nav>
-               
-
-            
+            </div><!-- Header -->
+                
+                <div id="items">
+                
+                </div>
+                 
             <div data-theme="a" data-role="footer" data-position="fixed" data-mini="true">
-                 <div data-role="navbar" data-iconpos="top">
+	             <div id="botnav"></div>
+      </div><!-- /footer -->
+</div><!-- /page -->
+       
+        
+                    <!-- ========== Start of grocery page =========== -->
+<div data-role="page" id="grocery" data-theme="a" data-add-back-btn="true">
+            
+            <div data-theme="a" data-role="header" data-position="fixed">
+                <h3>ToDo List</h3>
+                <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">
+                Menu
+                </a>
+                
+               <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>
-                            <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="a" data-icon="">
-                                GitHub Pages
+                            <a href="construction.html" rel="external" data-theme="a" data-icon="">
+                                One
                             </a>
                         </li>
                         <li>
-                            <a href="index.html" rel="external" data-theme="a" data-icon="">
-                                Home
+                            <a href="construction.html" rel="external" data-theme="" data-icon="">
+                                Two
                             </a>
                         </li>
                         <li>
@@ -314,19 +235,7 @@
                             </a>
                         </li>
                     </ul>
-                    </div>
-                </div><!-- /footer -->
-        </div><!-- /page -->
-        
-        
-                    <!-- ========== Start of grocery page =========== -->
-<div data-role="page" id="grocery" data-theme="a" data-add-back-btn="true">
-            
-            <div data-theme="a" data-role="header" data-position="fixed" >
-                <h3>ToDo List</h3>
-                <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">
-                Menu
-                </a>
+                </div> <!-- Header -->
                 <div data-role="popup" id="menu">
                      <ul style="list-style: none; padding-left: 2px;">
                         <li>
@@ -355,17 +264,13 @@
                             </a>
                         </li>
                     </ul>
-                </div>
-                
-            </div><!-- Header -->
-            
-            
-            
-            
+                </div> <!-- Popup Menu --> 
+            </div> <!-- Header -->
+
            <div data-role="content">
-           		<ul data-role="listview">
+           		<ul data-role="listview" data-filter="true">
            			<li>
-           				<a href="g#">
+           				<a href="#">
            					<img src="../Gold/images/Grocery.png" alt="Grocery">
            					<h3> Items for the BBQ </h3>
            					<p>Need to pick up meat for patties. Also do not forget the buns!</p>
@@ -399,39 +304,17 @@
            					<p>Need to pick up meat for patties. Also do not forget the buns!</p>
            				</a>
            			</li>
-           			<li>Some stuff</li>
-           			<li>More stuff</li>
+           			<li>List With Thumbnails</li>
            		</ul>
-           </div>
-            
-            <div data-theme="a" data-role="footer" data-position="fixed" data-mini="true">
-                 <div data-role="navbar" data-iconpos="top">
-                    <ul>
-                        <li>
-                            <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="a" data-icon="">
-                                GitHub Pages
-                            </a>
-                        </li>
-                        <li>
-                            <a href="index.html" rel="external" data-theme="a" data-icon="">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="construction.html" rel="external" data-theme="a" data-icon="">
-                                Three
-                            </a>
-                        </li>
-                    </ul>
-                    </div>
+           </div> <!-- Content -->
+
+            <div data-theme="a" data-role="footer" data-position="fixed">
+	            	<div id="botnav"></div>
+	            	
                 </div><!-- /footer -->
         </div><!-- /page -->
         
-        
-        <div data-role="collapsible" data-theme="a" data-content-theme="a">
-			<h3>Header swatch A</h3>
-			<p>I'm the collapsible content with a themed content block set to "a".</p>
-		</div>
+       
         
         
         <!-- JavaScript under here -->

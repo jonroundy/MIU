@@ -273,12 +273,18 @@ function closestEnabledButton( element ) {
 
 // My changes to be added to gold main
 
-$("#def").append("<ul id='abc'></ul>");
-$("#abc").append('<li><a href="#">111</a></li>');
-$("#abc").append('<li><a href="#">222</a></li>');
-$("#abc").append('<li><a href="#">333</a></li>');
-$("#def").navbar();
+$("#botnav").append("<ul id='abc'></ul>");
+$("#abc").append('<li><a href="http://jonroundyfs.github.com/MIU/">Git Hub Pages</a></li>');
+$("#abc").append('<li><a href="index.html">Home</a></li>');
+$("#abc").append('<li><a href="#about">About</a></li>');
+$("#botnav").navbar();
 
+$("#botnav2").append("<ul id='abc2'></ul>");
+$("#abc2").append('<li><a href="http://jonroundyfs.github.com/MIU/">Git Hub Pages</a></li>');
+$("#abc2").append('<li><a href="index.html">Home</a></li>');
+$("#abc2").append('<li><a href="#about">About</a></li>');
+$("#botnav2").navbar();
 
+$.mobile.page.prototype.options.domCache = true;
 	
 })(jQuery);
