@@ -116,28 +116,32 @@ window.addEventListener("DOMContentLoaded", function(){
 		for(var i=0, len=localStorage.length; i<len;i++){ 
 			var makeli = document.createElement('li');
 			var makeAnc = document.createElement('a');
-			
 			var linksLi = document.createElement('li');
-			makeList.appendChild(makeAnc);
-			makeAnc.appendChild(newImg);
-			
+			makeli.appendChild(makeAnc);
 			
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
 			//Convert the string from local storage value back to an object by using JSON.parse()
 			var obj = JSON.parse(value);
-			var makeSubList = document.createElement('ul');
-			makeSubList.setAttribute("style", "list-style:none; padding-left:2px;");
+			var makeSubList = document.createElement('li');
+			//makeSubList.setAttribute("style", "list-style:none; padding-left:2px;");
 			makeli.appendChild(makeSubList);
 			getImage(obj.cats[1], makeSubList);
-			for(var n in obj){
-			var makeSubli = document.createElement('li');
-			makeSubList.appendChild(makeSubli);
-			var optSubText = obj[n][0]+" "+obj[n][1];
-			makeSubli.innerHTML = optSubText;
-			makeSubList.appendChild(linksLi);
+			for(var n in obj) {
+			var makeSubli = document.createElement('p');
 			
-}
+			makeSubList.appendChild(makeSubli);
+			
+			var optSubText = obj[n][0]+" "+obj[n][1];
+			
+			makeSubli.innerHTML = optSubText;
+			
+			console.log(obj[n][0]);
+			
+			makeSubList.appendChild(linksLi);
+			//console.log(makeSubList);
+			makeSubList.appendChild(makeAnc); //Imgs
+}		//console.log(makeSubl);
 			makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons/links for each item in local storage.
 
 		}
