@@ -278,5 +278,7 @@ $("#abc").append('<li><a href="#">111</a></li>');
 $("#abc").append('<li><a href="#">222</a></li>');
 $("#abc").append('<li><a href="#">333</a></li>');
 $("#def").navbar();
+
+
 	
 })(jQuery);

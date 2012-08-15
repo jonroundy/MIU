@@ -49,14 +49,14 @@ window.addEventListener("DOMContentLoaded", function(){
 				g('taskForm').style.display = "block";
 				g('clear').style.display = "inline";
 				g('displayLink').style.display = "inline";
-			g('addNew').style.display = "none";
+				g('addNew').style.display = "none";
 				g('items').style.display = "none";
 				break;
 			default:
 				return false;
 		}
 	}
-	console.log(toggleControls.length);
+	
 	//Save data into local storage.
 	function storeData(key){
 		//If there is no key, this means this is a brand new item and we need a new key.
@@ -198,7 +198,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		
 		//Show the form
 		toggleControls("off");
-		console.log(toggleControls.length);
+		
 		//populate the form fields with current localStorage values.
 		g('groups').value = item.cats[1];
 		g('date').value = item.date[1];
@@ -369,7 +369,7 @@ function searchTasks() {
 	var save = g("submit");
 	save.addEventListener("click", validate);
 	var searchForm = g('searchTask');
-	searchForm.addEventListener("submit", searchTasks);
+	//searchForm.addEventListener("submit", searchTasks);
 	
 
 	
