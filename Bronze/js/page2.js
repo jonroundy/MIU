@@ -273,6 +273,7 @@ function closestEnabledButton( element ) {
 
 // My changes to be added to gold main
 
+// I know this is not effective - just for testing.
 $("#botnav").append("<ul id='abc'></ul>");
 $("#abc").append('<li><a href="http://jonroundyfs.github.com/MIU/">Git Hub Pages</a></li>');
 $("#abc").append('<li><a href="index.html">Home</a></li>');
@@ -284,6 +285,18 @@ $("#abc2").append('<li><a href="http://jonroundyfs.github.com/MIU/">Git Hub Page
 $("#abc2").append('<li><a href="index.html">Home</a></li>');
 $("#abc2").append('<li><a href="#about">About</a></li>');
 $("#botnav2").navbar();
+
+$("#botnav3").append("<ul id='abc3'></ul>");
+$("#abc3").append('<li><a href="http://jonroundyfs.github.com/MIU/">Git Hub Pages</a></li>');
+$("#abc3").append('<li><a href="index.html">Home</a></li>');
+$("#abc3").append('<li><a href="#about">About</a></li>');
+$("#botnav3").navbar();
+
+$("#botnav4").append("<ul id='abc4'></ul>");
+$("#abc4").append('<li><a href="http://jonroundyfs.github.com/MIU/">Git Hub Pages</a></li>');
+$("#abc4").append('<li><a href="index.html">Home</a></li>');
+$("#abc4").append('<li><a href="#about">About</a></li>');
+$("#botnav4").navbar();
 
 $.mobile.page.prototype.options.domCache = true;
 	

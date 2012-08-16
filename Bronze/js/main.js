@@ -85,65 +85,42 @@ window.addEventListener("DOMContentLoaded", function(){
 			alert("Task Saved!");
 }
 
-	function getData(){
-			toggleControls("on");
+		function getData(){
+			toggleControls("on");	
 				if(localStorage.length === 0){
 			alert("There are no task's to display. So default data was added.");
 			autoFillData();
 		}
-		//makeList.setAttribute("data-theme", "d");
-		//makeList.setAttribute("data-filter-placeholder", "Search Tasks...");
-		//makeList.setAttribute("data-split-icon", "check");
-		//makeList.setAttribute("data-inset", "true");
-		//makeList.setAttribute("data-filter", "true");
-		//makeList.setAttribute("data-inset", "true");
 		
-		
-		
-		// Write Data from Local Storage to the browser.
-		var parent = document.getElementById("items"); // EBID For Display Page FIX FOR JQUERY Mobile
-		//var makeDiv = document.createElement('div');
-		//parent.appendChild(makeDiv); // Fix for Jquery Mobile Call inside the page not the body of the index
-		//makeDiv.setAttribute("id", "items");
-		//makeDiv.setAttribute("data-role","content");
-		//makeDiv.setAttribute("data-autodividers", "true");
+		//Write Data from Local Storage to the browser.
+		var parent = document.getElementById("itemForm"); // EBID For Display Page FIX FOR JQUERY Mobile
+		var makeDiv = document.createElement('div');
 		var makeList = document.createElement('ul');
-		parent.appendChild(makeList);
-		//makeList.setAttribute("style", "list-style:none; padding-left:2px;"); // Style Rules for ul
-		makeList.setAttribute("data-role", "listview");
-		makeList.setAttribute("data-filter", "true");
-		g('items');
-		for(var i=0, len=localStorage.length; i<len;i++){ 
+		parent.appendChild(makeDiv); // Fix for Jquery Mobile Call inside the page not the body of the index
+		makeDiv.setAttribute("id", "items");
+		makeDiv.appendChild(makeList);
+		makeList.setAttribute("style", "list-style:none; padding-left:2px;"); // Style Rules for ul
+		//document.body.appendChild(makeDiv);
+		g('items').style.display = "block";
+		for(var i=0, len=localStorage.length; i<len;i++){
 			var makeli = document.createElement('li');
-			var makeAnc = document.createElement('a');
 			var linksLi = document.createElement('li');
-			makeli.appendChild(makeAnc);
-			
+			makeList.appendChild(makeli);
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
 			//Convert the string from local storage value back to an object by using JSON.parse()
 			var obj = JSON.parse(value);
-			var makeSubList = document.createElement('li');
-			//makeSubList.setAttribute("style", "list-style:none; padding-left:2px;");
+			var makeSubList = document.createElement('ul');
 			makeli.appendChild(makeSubList);
 			getImage(obj.cats[1], makeSubList);
-			for(var n in obj) {
-			var makeSubli = document.createElement('p');
-			
-			makeSubList.appendChild(makeSubli);
-			
-			var optSubText = obj[n][0]+" "+obj[n][1];
-			
-			makeSubli.innerHTML = optSubText;
-			
-			console.log(obj[n][0]);
-			
-			makeSubList.appendChild(linksLi);
-			//console.log(makeSubList);
-			makeSubList.appendChild(makeAnc); //Imgs
-}		//console.log(makeSubl);
+			for(var n in obj){
+				var makeSubli = document.createElement('li');
+				makeSubList.appendChild(makeSubli);
+				var optSubText = obj[n][0]+" "+obj[n][1];
+				makeSubli.innerHTML = optSubText;
+				makeSubList.appendChild(linksLi);
+			}
 			makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons/links for each item in local storage.
-
 		}
 
 	}
@@ -177,7 +154,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
 		//add edit single item link
 		var editLink = document.createElement('a');
-		editLink.href = "#page2";
+		editLink.href = "#";
 		editLink.key = key;
 		var editText = "Edit Task";
 		editLink.addEventListener("click", editItem);
@@ -380,7 +357,6 @@ function searchTasks() {
 	save.addEventListener("click", validate);
 	var searchForm = g('searchTask');
 	//searchForm.addEventListener("submit", searchTasks);
-	
 
 	
 	//$('#menu').popup("close"); // Works but has Uncaught error in console. Need to debug and revalidate code.
