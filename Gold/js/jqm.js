@@ -162,7 +162,9 @@ $.fn.buttonMarkup = function( options ) {
 		}
 		
 		if ( o.inline !== undefined ) {			
-
+			// Used to control styling in headers/footers, where buttons default to `mini` style.
+			buttonClass += o.inline === false ? " ui-btn-block" : " ui-btn-inline";
+		}
 		
 		
 		if ( o.icon ) {
