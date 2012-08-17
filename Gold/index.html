@@ -226,6 +226,8 @@
             </div> <!-- header end -->
             
             <div data-role="content" style="padding: 0px">
+                
+                <form action="" method="post" id="taskInfoForm">
                 <div>
                     <p style="text-align: justify; " data-mce-style="text-align: justify;">
                         <b>
@@ -247,7 +249,7 @@
                     </p>
                 </div>
                 
-                <form action="" method="post" id="taskInfoForm">
+                
                 
                 <div data-role="fieldcontain">
                     <label for="categoryList">
@@ -316,8 +318,7 @@
                 
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
-                        <legend>
-                        </legend>
+                        <legend></legend>
                         <input name="urgent" id="urgent" type="checkbox">
                         <label for="urgent">
                             Urgent!
@@ -338,33 +339,15 @@
                 		<input type="reset" data-theme="a" data-icon="refresh" data-iconpos="left" value="Reset">
                 		<input type="submit" data-theme="b" data-icon="arrow-r" data-iconpos="left" value="Save Task">
                 </div>
-            </div>
             
             <a href="#taskFormErrors" id="taskFormErrors" data-rel="dialog">Open Errors</a>
             
        </form>
             
-            <div data-role="tabbar" data-iconpos="top" data-theme="a">
-                <ul>
-                    <li>
-                        <a href="#home" data-theme="" data-icon="home">
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
-                            GitHub Pages
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#about" data-theme="" data-icon="info">
-                            About
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div> <!-- addTask End -->
-        
+         </div>
+         
+   </div> <!-- addTask End -->
+    
        
         <div data-role="dialog" id="taskFormErrors">
         
@@ -377,7 +360,9 @@
         			<li>Test.</li>
         		</ul>
         	</div>
+        	
         </div>
+        
         
      
         <!-- displayAll -->
