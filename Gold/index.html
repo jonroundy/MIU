@@ -25,7 +25,7 @@
     
     <body>
         <!-- home -->
-        <div data-role="page" data-theme="a" id="home">
+        <div data-role="page" data-theme="a" id="home" >
             <div data-theme="a" data-role="header">
                 <h2>
                     ToDo List
@@ -71,20 +71,13 @@
             </div>
             <div data-role="content" style="padding: 0px">
                 <div>
-                    <p style="background-color: rgb(52, 102, 121); text-align: center; ">
-                        <span style="font-family: 'arial black', 'avant garde'; font-size: x-large;"
-                        data-mce-style="font-family: 'arial black', 'avant garde'; font-size: x-large;">
-                            <span style="font-size: medium; font-family: impact, chicago; ">
-                                ﻿
-                            </span>
+                    <p style="background-color: rgb(52, 102, 121); text-align: center; height:100px; float:">
                             <br>
-                            <span style="font-family: impact, chicago; ">
+                            <br>
+                            <span style="font-family: 'arial black', 'avant garde'; font-size: x-large; height:100px;">
                                 Keeping track has never been easier!
                             </span>
-                            <br>
-                            ﻿
-                            <br>
-                        </span>
+
                     </p>
                 </div>
                 <a data-role="button" data-transition="pop" data-theme="c" href="#addTask"
@@ -175,9 +168,9 @@
             </div>
         </div>
         <!-- addTask -->
-        <div data-role="page" data-theme="a" id="addTask">
+        <div data-role="page" data-theme="a" id="addTask" data-add-back-btn="true">
             
-            <div data-theme="a" data-role="header" data-position="fixed">
+            <div data-theme="a" data-role="header">
                 <h3>
                     Add task
                 </h3>
@@ -252,6 +245,7 @@
                             <br>
                         </b>
                     </p>
+                </div>
                 
                 <form action="" method="post" id="taskInfoForm">
                 
@@ -283,10 +277,10 @@
                 
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-mini="true">
-                        <label for="textinput1">
+                        <label for="taskname">
                             *Task Name:
                         </label>
-                        <input name="taskName" id="textinput1" placeholder="e.g. Project due soon!"
+                        <input name="taskname" id="taskname" placeholder="e.g. Project due soon!"
                         value="" type="text">
                     </fieldset>
                 </div>
@@ -296,17 +290,17 @@
                         <label for="textinput2">
                             *Date:
                         </label>
-                        <input name="taskName" id="textinput2" placeholder="Month/Day/Year" value=""
+                        <input name="taskName" id="date" placeholder="Month/Day/Year" value=""
                      type="date">
                     </fieldset>
                 </div>
                 
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-mini="true">
-                        <label for="textinput3">
+                        <label for="time">
                             *Time:
                         </label>
-                        <input name="time" id="textinput3" placeholder="12:00PM" value="" type="time">
+                        <input name="time" id="time" placeholder="12:00PM" value="" type="time">
                     </fieldset>
                 </div>
                 
@@ -315,7 +309,7 @@
                         <label for="slider1">
                             Estimated amount of time (In hours):
                         </label>
-                        <input type="range" name="slider" id="slider1" value="5" min="1" max="24"
+                        <input type="range" name="slider1" id="slider1" value="5" min="1" max="24"
                         data-highlight="true">
                     </fieldset>
                 </div>
@@ -324,8 +318,8 @@
                     <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
                         <legend>
                         </legend>
-                        <input name="checkbox1" id="checkbox1" type="checkbox">
-                        <label for="checkbox1">
+                        <input name="urgent" id="urgent" type="checkbox">
+                        <label for="urgent">
                             Urgent!
                         </label>
                     </fieldset>
@@ -333,10 +327,10 @@
                 
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup">
-                        <label for="textarea1">
+                        <label for="textbox">
                             Notes:
                         </label>
-                        <textarea name="taskNotes" id="textarea1" placeholder="Enter notes here...."></textarea>
+                        <textarea name="textbox" id="textbox" placeholder="Enter notes here...."></textarea>
                     </fieldset>
                 </div>
                 
@@ -344,9 +338,11 @@
                 		<input type="reset" data-theme="a" data-icon="refresh" data-iconpos="left" value="Reset">
                 		<input type="submit" data-theme="b" data-icon="arrow-r" data-iconpos="left" value="Save Task">
                 </div>
-            
             </div>
-         </form>
+            
+            <a href="#taskFormErrors" id="taskFormErrors" data-rel="dialog">Open Errors</a>
+            
+       </form>
             
             <div data-role="tabbar" data-iconpos="top" data-theme="a">
                 <ul>
@@ -369,10 +365,23 @@
             </div>
         </div> <!-- addTask End -->
         
+       
+        <div data-role="dialog" id="taskFormErrors">
+        
+        	<div data-role="header" data-position="fixed">
+        		<h1>Some Fields Were Missing</h1>
+        	</div>
+        	
+        	<div data-role="content">
+        		<ul>
+        			<li>Test.</li>
+        		</ul>
+        	</div>
+        </div>
         
      
         <!-- displayAll -->
-        <div data-role="page" data-theme="a" id="displayAll">
+        <div data-role="page" data-theme="a" id="displayAll" data-add-back-btn="true">
             <div data-theme="a" data-role="header" data-position="fixed">
                 <h3>
                     Dispay All
@@ -536,7 +545,7 @@
                     </div>
                     <div class="ui-block-c">
                         <div style=" text-align:right">
-                            <img style="width: 80px; height: 80px" src="images/grocery.png">
+                            <img style="width: 80px; height: 80px" src="images/Grocery.png">
                         </div>
                     </div>
                     <div class="ui-block-a">
@@ -804,7 +813,7 @@
                             Walk the dog
                         </h3>
                         <div style="">
-                            <img style="width: 80px; height: 80px" src="http://assets.codiqa.com/ps/30339/d8e792f35f58940bPersonal.png">
+                            <img style="width: 80px; height: 80px" src="images/Personal.png">
                         </div>
                         <div>
                             <p>
@@ -1114,7 +1123,7 @@
             </div>
         </div>
         <!-- grocery -->
-        <div data-role="page" data-theme="a" id="page11">
+        <div data-role="page" data-theme="a" id="grocery">
             <div data-theme="a" data-role="header" data-position="fixed">
                 <h3>
                     ToDo List

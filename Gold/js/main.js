@@ -1,10 +1,10 @@
 $('#home').on('pageinit', function(){
 	//code needed for home page goes here
-};	
+}
 		
 $('#addItem').on('pageinit', function(){
 
-		var myForm = $('#formId');
+		var myForm = $('#TaskInfoForm');
 		    myForm.validate({
 			invalidHandler: function(form, validator) {
 			},
