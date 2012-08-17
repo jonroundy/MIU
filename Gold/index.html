@@ -19,7 +19,7 @@
     <!-- <link rel="stylesheet" href="css/themes/todo.css" /> -->
     <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
     	
-    	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+    <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
 	<script src="js/libs/modernizr.custom.min.js"></script>
     </head>
     
@@ -109,7 +109,7 @@
                                 Tasks
                             </li>
                             <li data-theme="c">
-                                <a href="#grocery#" data-transition="slide">
+                                <a href="#grocery" data-transition="slide">
                                     Grocery
                                     <span class="ui-li-count">
                                         4
@@ -162,7 +162,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" data-theme="" data-icon="star">
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
                             GitHub Pages
                         </a>
                     </li>
@@ -176,11 +176,12 @@
         </div>
         <!-- addTask -->
         <div data-role="page" data-theme="a" id="addTask">
+            
             <div data-theme="a" data-role="header" data-position="fixed">
                 <h3>
                     Add task
                 </h3>
-                <div data-role="popup" id="menu">
+                <div data-role="popup" id="menu2">
                      <ul style="list-style: none; padding-left: 2px;">
                         <li>
                             <a data-role="button" href="#home" data-theme="a" data-icon="">
@@ -228,8 +229,9 @@
                             </a>
                         </li>
                     </ul>
-                </div>
-            </div>
+                </div> <!-- navbar end -->
+            </div> <!-- header end -->
+            
             <div data-role="content" style="padding: 0px">
                 <div>
                     <p style="text-align: justify; " data-mce-style="text-align: justify;">
@@ -250,12 +252,14 @@
                             <br>
                         </b>
                     </p>
-                </div>
+                
+                <form action="" method="post" id="taskInfoForm">
+                
                 <div data-role="fieldcontain">
-                    <label for="selectmenu1">
+                    <label for="categoryList">
                         *Select Category:
                     </label>
-                    <select name="selectmenu1" id="selectmenu1" data-mini="true">
+                    <select name="categoryList" id="categoryList" data-mini="true">
                         <option value="option1">
                             --Choose A Category--
                         </option>
@@ -276,6 +280,7 @@
                         </option>
                     </select>
                 </div>
+                
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-mini="true">
                         <label for="textinput1">
@@ -285,15 +290,17 @@
                         value="" type="text">
                     </fieldset>
                 </div>
+                
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-mini="true">
                         <label for="textinput2">
                             *Date:
                         </label>
                         <input name="taskName" id="textinput2" placeholder="Month/Day/Year" value=""
-                        type="date">
+                     type="date">
                     </fieldset>
                 </div>
+                
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-mini="true">
                         <label for="textinput3">
@@ -302,6 +309,7 @@
                         <input name="time" id="textinput3" placeholder="12:00PM" value="" type="time">
                     </fieldset>
                 </div>
+                
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup">
                         <label for="slider1">
@@ -311,6 +319,7 @@
                         data-highlight="true">
                     </fieldset>
                 </div>
+                
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
                         <legend>
@@ -321,6 +330,7 @@
                         </label>
                     </fieldset>
                 </div>
+                
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup">
                         <label for="textarea1">
@@ -329,11 +339,15 @@
                         <textarea name="taskNotes" id="textarea1" placeholder="Enter notes here...."></textarea>
                     </fieldset>
                 </div>
-                <input type="submit" data-theme="a" data-icon="refresh" data-iconpos="left"
-                value="Reset">
-                <input type="submit" data-theme="b" data-icon="arrow-r" data-iconpos="left"
-                value="Save Task">
+                
+                <div data-role="fieldcontain">
+                		<input type="reset" data-theme="a" data-icon="refresh" data-iconpos="left" value="Reset">
+                		<input type="submit" data-theme="b" data-icon="arrow-r" data-iconpos="left" value="Save Task">
+                </div>
+            
             </div>
+         </form>
+            
             <div data-role="tabbar" data-iconpos="top" data-theme="a">
                 <ul>
                     <li>
@@ -342,7 +356,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" data-theme="" data-icon="star">
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
                             GitHub Pages
                         </a>
                     </li>
@@ -353,7 +367,10 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> <!-- addTask End -->
+        
+        
+     
         <!-- displayAll -->
         <div data-role="page" data-theme="a" id="displayAll">
             <div data-theme="a" data-role="header" data-position="fixed">
@@ -403,7 +420,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#page3" data-theme="a" data-icon="plus">
+                            <a href="#addTask" data-theme="a" data-icon="plus">
                                 Add Task
                             </a>
                         </li>
@@ -437,7 +454,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" data-theme="" data-icon="star">
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
                             GitHub Pages
                         </a>
                     </li>
@@ -498,7 +515,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#page3" data-theme="a" data-icon="plus">
+                            <a href="#addTask" data-theme="a" data-icon="plus">
                                 Add Task
                             </a>
                         </li>
@@ -569,7 +586,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" data-theme="" data-icon="star">
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
                             GitHub Pages
                         </a>
                     </li>
@@ -659,7 +676,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" data-theme="" data-icon="star">
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
                             GitHub Pages
                         </a>
                     </li>
@@ -912,7 +929,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" data-theme="" data-icon="star">
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
                             GitHub Pages
                         </a>
                     </li>
@@ -930,18 +947,50 @@
                 <h3>
                     ToDo List
                 </h3>
-                <a data-role="button" data-transition="fade" href="#page3" class="ui-btn-right">
-                    Button
-                </a>
+                <div data-role="popup" id="menu">
+                     <ul style="list-style: none; padding-left: 2px;">
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                Home
+                            </a>
+                             <li>
+                            <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
+                                9Grid
+                            </a>
+                        </li>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
+                                Display All
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Work
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Misc
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>
-                            <a href="#page3" data-theme="" data-icon="delete">
+                            <a href="#construction" data-theme="" data-icon="delete">
                                 Clear Stored Tasks
                             </a>
                         </li>
                         <li>
-                            <a href="#page3" data-theme="a" data-icon="plus">
+                            <a href="#addTask" data-theme="a" data-icon="plus">
                                 Add Task
                             </a>
                         </li>
@@ -966,7 +1015,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" data-theme="" data-icon="star">
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
                             GitHub Pages
                         </a>
                     </li>
@@ -984,13 +1033,45 @@
                 <h3>
                     ToDo List
                 </h3>
-                <a data-role="button" data-transition="fade" href="#page3" class="ui-btn-right">
-                    Button
-                </a>
+                <div data-role="popup" id="menu">
+                     <ul style="list-style: none; padding-left: 2px;">
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                Home
+                            </a>
+                             <li>
+                            <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
+                                9Grid
+                            </a>
+                        </li>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
+                                Display All
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Work
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Misc
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>
-                            <a href="#page3" data-theme="" data-icon="delete">
+                            <a href="#construction" data-theme="" data-icon="delete">
                                 Clear Stored Tasks
                             </a>
                         </li>
@@ -1020,7 +1101,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" data-theme="" data-icon="star">
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
                             GitHub Pages
                         </a>
                     </li>
@@ -1038,18 +1119,50 @@
                 <h3>
                     ToDo List
                 </h3>
-                <a data-role="button" data-transition="fade" href="#page3" class="ui-btn-right">
-                    Button
-                </a>
+                <div data-role="popup" id="menu">
+                     <ul style="list-style: none; padding-left: 2px;">
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                Home
+                            </a>
+                             <li>
+                            <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
+                                9Grid
+                            </a>
+                        </li>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
+                                Display All
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Work
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Misc
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>
-                            <a href="#page3" data-theme="" data-icon="delete">
+                            <a href="#construction" data-theme="" data-icon="delete">
                                 Clear Stored Tasks
                             </a>
                         </li>
                         <li>
-                            <a href="#page3" data-theme="a" data-icon="plus">
+                            <a href="#addTask" data-theme="a" data-icon="plus">
                                 Add Task
                             </a>
                         </li>
@@ -1128,7 +1241,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" data-theme="" data-icon="star">
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
                             GitHub Pages
                         </a>
                     </li>
@@ -1146,9 +1259,41 @@
                 <h3>
                     ToDo List
                 </h3>
-                <a data-role="button" data-transition="fade" href="#page3" class="ui-btn-right">
-                    Button
-                </a>
+                <div data-role="popup" id="menu">
+                     <ul style="list-style: none; padding-left: 2px;">
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                Home
+                            </a>
+                             <li>
+                            <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
+                                9Grid
+                            </a>
+                        </li>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
+                                Display All
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Work
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Misc
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
             <div data-role="content" style="padding: 15px">
                 <div>
@@ -1174,7 +1319,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" data-theme="" data-icon="star">
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
                             GitHub Pages
                         </a>
                     </li>
@@ -1192,9 +1337,41 @@
                 <h3>
                     ToDo List
                 </h3>
-                <a data-role="button" data-transition="fade" href="#page3" class="ui-btn-right">
-                    Button
-                </a>
+                <div data-role="popup" id="menu">
+                     <ul style="list-style: none; padding-left: 2px;">
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                                Home
+                            </a>
+                             <li>
+                            <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
+                                9Grid
+                            </a>
+                        </li>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
+                                Display All
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Work
+                            </a>
+                        </li>
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Misc
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
             <div data-role="content" style="padding: 15px">
                 <div style=" text-align:center">
@@ -1229,7 +1406,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" data-theme="" data-icon="star">
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
                             GitHub Pages
                         </a>
                     </li>

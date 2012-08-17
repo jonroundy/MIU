@@ -44,7 +44,7 @@ var storeData = function(data){
 		//If there is no key, this means this is a brand new item and we need a new key.
 	if(!key){
 		var id					= Math.floor(Math.random()*100000001);
-	¥}else{
+	}else{
 		//Set the id to the existing key we're editing so that it will save over the data.
 		//The key is the same ky that's been passed along from the editSubmit event handler
 		//To the validate function, and then passed here, into the storeData function.
@@ -54,7 +54,7 @@ var storeData = function(data){
 		//Object properties are going to contain array with the form label and input value
 		getCheckboxVault();
 	var item				= {};
-		item.cats				= ["Category List: ", g("groups").value];
+		item.cats				= ["Category List: ", g("categoryList").value];
 		item.taskname			= ["My Task Name: ", g("taskname").value];
 		item.date				= ["Date: ", g("date").value];
 		item.time				= ["Time: ", g("time").value];
