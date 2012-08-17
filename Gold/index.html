@@ -227,7 +227,8 @@
             
             <div data-role="content" style="padding: 0px">
                 
-                <form action="" method="post" id="taskInfoForm">
+                
+                
                 <div>
                     <p style="text-align: justify; " data-mce-style="text-align: justify;">
                         <b>
@@ -249,8 +250,7 @@
                     </p>
                 </div>
                 
-                
-                
+                <form action="" method="post" id="taskInfoForm">
                 <div data-role="fieldcontain">
                     <label for="categoryList">
                         *Select Category:
@@ -336,23 +336,41 @@
                 </div>
                 
                 <div data-role="fieldcontain">
-                		<input type="reset" data-theme="a" data-icon="refresh" data-iconpos="left" value="Reset">
-                		<input type="submit" data-theme="b" data-icon="arrow-r" data-iconpos="left" value="Save Task">
+                		<input type="reset" data-theme="a" data-icon="refresh" data-iconpos="left" value="Reset" />
+                		<input type="submit" data-theme="b" data-icon="arrow-r" data-iconpos="left" value="Save Task" />
                 </div>
             
-            <a href="#taskFormErrors" id="taskFormErrors" data-rel="dialog">Open Errors</a>
+                <a href="#taskFormErrors" id="taskFormErrors" data-rel="dialog" data-transition="pop">Open Errors</a>
             
-       </form>
-            
-         </div>
-         
+            </form>
+           
+            	<div data-role="tabbar" data-iconpos="top" data-theme="a" data-position="fixed">
+               	 	<ul>
+                  	  <li>
+                        	<a href="#home" data-theme="" data-icon="home">
+                            	Home
+                            </a>
+                            </li>
+                            <li>
+                            <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
+                            	GitHub Pages
+                            </a>
+                            </li>
+                      <li>
+                        	<a href="#about" data-theme="" data-icon="info">
+                            	About
+                            </a>
+                      </li>
+                    </ul>
+            </div>        
+       </div>  
    </div> <!-- addTask End -->
     
        
         <div data-role="dialog" id="taskFormErrors">
         
         	<div data-role="header" data-position="fixed">
-        		<h1>Some Fields Were Missing</h1>
+        		<h1>Missing Fields</h1>
         	</div>
         	
         	<div data-role="content">
