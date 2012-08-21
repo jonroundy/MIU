@@ -1,55 +1,46 @@
 $('#home').on('pageinit', function(){
-	//code needed for home page goes here
-});
-		
-$('#addTask').on('pageinit', function(data){
+	//code needed for main page goes here
+});	
 
-$(document).ready(function(){
-
-		var tlform = $('#taskInfoForm'),
-			tlerrorlink = $('#tl errorslink')
-		;
-		   // console.log(validator.submitted);
-		   
-		tlform.validate({
+$('#addTask').on('pageinit', function(){
+		delete $.validator.methods.date;
+		var myForm = $('#taskInfoForm');
+		    myForm.validate({
 			invalidHandler: function(form, validator) {
-				tlerrorlink.click();
-				for(var key in validator.submitted) {
-					var label = $('label[for^="'+ key +'"]');
-					label.closest('fieldset')
-		};
-	},
+			},
 			submitHandler: function() {
-				var data = tlform.serializeArray();
-				parseTaskData(data);
-		},
-	},
-	});
+				var data = myForm.serializeArray();
+			storeData(data);
+			}
+		});
+
 	//any other code needed for addItem page goes here
+
 });
 
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
 
-//var autofillData = function (){
+var autofillData = function (){
 
-//});
+};
 
-//var getData = function(){
+var getData = function(){
 
-//};
+};
 
-var parseTaskData = function(data){
-	
-	console.log(data);
-	
+var storeData = function(data){
+	//if there is no key, this is a new item and will need a key
+	var id 			= Math.floor(Math.random()*1000000001);
+	localStorage.setItem(id, JSON.stringify(data));
+	alert("Task Saved!");
 }; 
 
-//var	deleteItem = function (){
-			
-//};
-					
-//var clearLocal = function(){
+var	deleteItem = function (){
 
-//};
+};
+
+var clearLocal = function(){
+
+};
 
 
