@@ -17,61 +17,78 @@
     <!-- StyleSheets under here -->
     <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
     <link rel="stylesheet" href="css/jqmstyle.css" media="screen" type="text/css"/> 
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.css"/>
     <!--<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" /> -->
-    <link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" /> 
+    <link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css"/>
+    <link rel="stylesheet" href="css/font-awesome/jqm-icons.css"/>
     	
     <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
 	<script src="js/libs/modernizr.custom.min.js"></script>
     </head>
     
     <body>
+        
         <!-- home -->
-        <div data-role="page" data-theme="a" id="home" >
-            <div data-theme="a" data-role="header">
-                <h2>
-                    ToDo List
-                </h2>
-<a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">
-                    Menu
-                </a>
+        <div data-role="page" data-theme="a" id="home">
+        
+        <div data-role="header" >
+    <div>
+    <h2 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h2>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+
+                
+<a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
                 <div data-role="popup" id="menu">
                      <ul style="list-style: none; padding-left: 2px;">
                         <li>
-                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                            <a data-role="button" href="#home" data-theme="a" data-icon="pencil">
                                 Home
                             </a>
-                             <li>
+                        <li>
                             <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
                                 9Grid
                             </a>
                         </li>
-                        </li>
+                        
                         <li>
                             <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
                                 Display All
                             </a>
                         </li>
+                        
                         <li>
                             <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
                                 About
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Work
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Misc
                             </a>
                         </li>
                     </ul>
+                </div> <!-- Popup end -->
                 </div>
-
-            </div>
-            <div data-role="content" style="padding: 0px">
+                 <div>
+                    <p style="background-color: rgb(52, 102, 121); text-align: center; height:; float:">
+                            <br>
+                            <br>
+                            <span style="font-family: 'arial black', 'avant garde'; font-size: x-large; height:100px;">
+                                Keeping track has never been easier!
+                            </span>
+                    </p>
+                </div>
+                
+            </div> <!-- Header End -->
+            <div data-role="content" style="padding: 0px" data-theme="">
                 <div>
                     <p style="background-color: rgb(52, 102, 121); text-align: center; height:100px; float:">
                             <br>
@@ -168,7 +185,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div><!-- /header -->
         <!-- addTask -->
         <div data-role="page" data-theme="a" id="addTask" data-add-back-btn="true">
             
@@ -219,7 +236,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#addTask" data-theme="a" data-icon="info">
+                            <a href="#" data-theme="a" data-icon="info" id="displayLink">
                                 Display Tasks
                             </a>
                         </li>
@@ -233,45 +250,33 @@
                 
                 <div>
                     <p style="text-align: justify; " data-mce-style="text-align: justify;">
-                        <b>
-                            Task info
-                        </b>
+                        <b>Task info</b>
                     </p>
                     <p style="text-align: center; " data-mce-style="text-align: center;">
-                        <b>
-                            *
-                            <span style="color: rgb(255, 0, 0); ">
-                                fields are required.
-                            </span>
-                        </b>
-                    </p>
-                    <p style="text-align: center; " data-mce-style="text-align: center;">
-                        <b>
-                            <br>
-                        </b>
+                        <b>*<span style="color: rgb(255, 0, 0); ">fields are required.</span></b>
                     </p>
                 </div>
                 
-                <form action="#addTask" method="post" id="taskinfoform">
+                <form action="#addTask" method="get" id="taskinfoform" name="taskinfoform">
                 <div data-role="fieldcontain">
                     <label for="categoryList">
                         *Select Category:
                     </label>
                     <select name="categoryList" id="categoryList" data-mini="true" data-native-menu="false" class="required">
                         <option data-placeholder="true" value> --Choose A Category-- </option>
-                        <option value="value">
+                        <option value="Grocery">
                             Grocery
                         </option>
-                        <option value="value">
+                        <option value="Misc">
                             Misc
                         </option>
-                        <option value="value">
+                        <option value="Personal">
                             Personal
                         </option>
-                        <option value="value">
+                        <option value="School">
                             School
                         </option>
-                        <option value="value">
+                        <option value="Work">
                             Work
                         </option>
                     </select>
@@ -293,14 +298,14 @@
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-mini="true">
                         <label for="time">*Time:</label>
-                        <input name="time" id="time" placeholder="12:00PM" value="" type="time" class="required">
+                        <input name="time" id="time" placeholder="12:00PM" value="" type="time" class="required time">
                     </fieldset>
                 </div>
                 
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup">
-                        <label for="slider1">Estimated amount of time (In hours):</label>
-                        <input type="range" name="slider1" id="slider1" value="5" min="1" max="24" data-highlight="true">
+                        <label for="esttime">Estimated amount of time (In hours):</label>
+                        <input type="range" name="esttime" id="esttime" value="5" min="1" max="24" data-highlight="true">
                     </fieldset>
                 </div>
                 
@@ -323,7 +328,7 @@
                 
                 <div data-role="fieldcontain">
                 		<input type="reset" data-theme="a" data-icon="refresh" data-iconpos="left" value="Reset" />
-                		<input type="submit" data-theme="b" data-icon="arrow-r" data-iconpos="left" value="Save Task" />
+                		<input class="submit" type="submit" data-theme="b" data-icon="arrow-r" data-iconpos="left" value="Save Task" />
                 </div>
             
                 <a href="#taskFormErrors" id="tferrorslink" data-rel="dialog" data-transition="pop">Open Errors</a>

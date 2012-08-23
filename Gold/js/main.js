@@ -10,7 +10,7 @@ $('#addTask').on('pageinit', function(){
 		
 		myform.validate({
 			invalidHandler: function(form, validator){
-				tferrorslink.click();
+				tferrorslink.click("refresh");
 				var html = '';
 				for(var key in validator.submitted){
 					var label = $('label[for^="'+ key +'"]').not('[generated]');
@@ -23,11 +23,18 @@ $('#addTask').on('pageinit', function(){
 				$("#taskFormErrors p").blink();
 				
 			},
+
+			//$("#taskFormErrors").validate;
 			submitHandler: function() {
 				var data = myform.serializeArray();
 			storeData(data);
-			}
+			},
+			//submitHandler: function() {
+			//var displayLink = myform.displayLink;
+			//displayLink.click(getData);
+			//}
 		});
+		
 
 	//any other code needed for addItem page goes here
 
@@ -35,23 +42,25 @@ $('#addTask').on('pageinit', function(){
 
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
 
-var autofillData = function (){
-
+var autoFillData = function (){
+		for(var n in json){
+		var id = Math.floor(Math.random()*100000000001);
+		localStorage.setItem(id, JSON.stringify(json[n]));
+		}
 };
 
 var getData = function(){
-
+		if(localStorage.length === 0){
+		alert("There are no task's to display. So default data was added.");
+		autoFillData();
+		}
 };
 
 var storeData = function(data){
-<<<<<<< Updated upstream
-	var id = Math.floor(Math.random()*1000000001);
-=======
-	var id 			= Math.floor(Math.random()*1000000001);
->>>>>>> Stashed changes
+	var id = Math.floor(Math.random()*100000001);
 	localStorage.setItem(id, JSON.stringify(data));
 	alert("Task Saved!");
-}; 
+};
 
 
 var	deleteItem = function (){
@@ -62,4 +71,12 @@ var clearLocal = function(){
 
 };
 
+	//Get the image for the right category
+var getImage = function (catName, makeSubList){
+		var imageLi = document.createElement('li');
+		makeSubList.appendChild(imageLi);
+		var newImg = document.createElement('img');
+		var setSrc = newImg.setAttribute("src", "images/"+ catName + ".png");
+		imageLi.appendChild(newImg);
+	}
 

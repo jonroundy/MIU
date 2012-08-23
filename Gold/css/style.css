@@ -38,3 +38,8 @@ label.error{
 	font-style: oblique;
 	text-align: center;
 }
+
+h3.ui-title{
+	text-align: -webkit-left;
+	text-align: left;
+}
