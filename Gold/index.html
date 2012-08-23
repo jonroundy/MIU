@@ -252,15 +252,13 @@
                     </p>
                 </div>
                 
-                <form action="" method="post" id="taskinfoform">
+                <form action="#addTask" method="post" id="taskinfoform">
                 <div data-role="fieldcontain">
                     <label for="categoryList">
                         *Select Category:
                     </label>
-                    <select name="categoryList" id="categoryList" data-mini="true">
-                        <option value="option1">
-                            --Choose A Category--
-                        </option>
+                    <select name="categoryList" id="categoryList" data-mini="true" data-native-menu="false" class="required">
+                        <option data-placeholder="true" value> --Choose A Category-- </option>
                         <option value="value">
                             Grocery
                         </option>
@@ -288,7 +286,7 @@
                 
                 <div>
                 	<label for="date">*Date:</label> 
-                	<input name="date" id="date" type="date" data-role="datebox” data-options='{"mode": "calbox"}' default value="" class="required date" >
+                	<input name="date" id="date" type="date" data-role="datebox” data-options='{"mode": "calbox"}' default value="" class="required date" placeholder="Month/Day/Year" >
                 </div>
 
                 
@@ -355,7 +353,7 @@
    </div> <!-- addTask End -->
     
        <!-- Form Errors -->
-        <div data-role="dialog" id="taskFormErrors">
+        <div data-role="dialog" id="taskFormErrors" data-add-back-btn="true">
         
         	<div data-role="header" data-position="fixed">
         		<h1>Missing Fields</h1>

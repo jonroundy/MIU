@@ -3,7 +3,7 @@ $('#home').on('pageinit', function(){
 });	
 
 $('#addTask').on('pageinit', function(){
-		delete $.validator.methods.date;
+		//delete $.validator.methods.date;
 		var myform = $('#taskinfoform'),
 			tferrorslink= $('#tferrorslink')
 		;
@@ -44,7 +44,11 @@ var getData = function(){
 };
 
 var storeData = function(data){
+<<<<<<< Updated upstream
 	var id = Math.floor(Math.random()*1000000001);
+=======
+	var id 			= Math.floor(Math.random()*1000000001);
+>>>>>>> Stashed changes
 	localStorage.setItem(id, JSON.stringify(data));
 	alert("Task Saved!");
 }; 
