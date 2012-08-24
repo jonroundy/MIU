@@ -31,18 +31,17 @@
         <!-- home -->
         <div data-role="page" data-theme="a" id="home">
         
-        <div data-role="header" >
-    <div>
-    <h2 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h2>
-    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+        <div data-role="header" data-theme="a">
 
-                
-<a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
                 
                 <div data-role="popup" id="menu">
                      <ul style="list-style: none; padding-left: 2px;">
                         <li>
-                            <a data-role="button" href="#home" data-theme="a" data-icon="pencil">
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
                                 Home
                             </a>
                         <li>
@@ -76,96 +75,53 @@
                         </li>
                     </ul>
                 </div> <!-- Popup end -->
-                </div>
-                 <div>
-                    <p style="background-color: rgb(52, 102, 121); text-align: center; height:; float:">
+         </div> <!-- Header End -->
+            
+            <div data-role="content"  data-theme="a">
+                
+               
+                    <p style="background-color: rgb(52, 102, 121); text-align: center;">
                             <br>
                             <br>
                             <span style="font-family: 'arial black', 'avant garde'; font-size: x-large; height:100px;">
                                 Keeping track has never been easier!
                             </span>
                     </p>
+                    <a data-role="button" data-transition="pop" data-theme="c" href="#addTask" data-icon="arrow-r" data-iconpos="left">
+                    Start here!
+                    </a>
+                
+                <div data-role="collapsible-set" data-theme="a">
+                	<h2>Browse</h2>
+                	
+                	<ul data-filter="true" data-role="listview" data-filter-placeholder="Search Categories...">
+                		
+                	<li>
+                		<a href="#grocery" data-icon="arrow-r" data-iconpos="left" data-mini="true">
+                		Grocery
+                		<span class="ui-li-count">4</span></a>
+                	</li>
+                			
+                	<li>
+                		<a href="#misc" data-icon="arrow-r" data-iconpos="left" data-mini="true">Misc<span class="ui-li-count">4</span></a>
+                	</li>
+
+                	<li>
+                		<a href="#personal" data-icon="arrow-r" data-iconpos="left" data-mini="true">Personal<span class="ui-li-count">4</span></a>
+                	</li>
+
+                	<li>
+                		<a href="#school" data-icon="arrow-r" data-iconpos="left" data-mini="true">School<span class="ui-li-count">4</span></a>
+                	</li>
+
+                	<li>
+                		<a href="#work" data-icon="arrow-r" data-iconpos="left" data-mini="true">Work<span class="ui-li-count">4</span></a>
+                	</li>
+
+                	</ul>
+                	
                 </div>
                 
-            </div> <!-- Header End -->
-            <div data-role="content" style="padding: 0px" data-theme="">
-                <div>
-                    <p style="background-color: rgb(52, 102, 121); text-align: center; height:100px; float:">
-                            <br>
-                            <br>
-                            <span style="font-family: 'arial black', 'avant garde'; font-size: x-large; height:100px;">
-                                Keeping track has never been easier!
-                            </span>
-
-                    </p>
-                </div>
-                <a data-role="button" data-transition="pop" data-theme="c" href="#addTask"
-                data-icon="arrow-r" data-iconpos="left">
-                    Start here!
-                </a>
-                <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup" data-mini="true">
-                        <label for="searchinput2">
-                        </label>
-                        <input name="searchbar" id="searchinput2" placeholder="Search here..."
-                        value="" type="search">
-                    </fieldset>
-                </div>
-                <div data-role="collapsible-set" data-theme="a" data-content-theme="b">
-                    <div data-role="collapsible" data-collapsed="false">
-                        <h3>
-                            Browse
-                        </h3>
-                        <ul data-role="listview" data-divider-theme="b" data-inset="false">
-                            <li data-role="list-divider" role="heading">
-                                Tasks
-                            </li>
-                            <li data-theme="c">
-                                <a href="#grocery" data-transition="slide">
-                                    Grocery
-                                    <span class="ui-li-count">
-                                        4
-                                    </span>
-                                </a>
-                            </li>
-                            <li data-theme="c">
-                                <a href="#misc" data-transition="slide">
-                                    Misc
-                                    <span class="ui-li-count">
-                                        4
-                                    </span>
-                                </a>
-                            </li>
-                            <li data-theme="c">
-                                <a href="#personal" data-transition="slide">
-                                    Personal
-                                    <span class="ui-li-count">
-                                        4
-                                    </span>
-                                </a>
-                            </li>
-                            <li data-theme="c">
-                                <a href="#school" data-transition="slide">
-                                    School
-                                    <span class="ui-li-count">
-                                        4
-                                    </span>
-                                </a>
-                            </li>
-                            <li data-theme="c">
-                                <a href="#work" data-transition="slide">
-                                    Work
-                                    <span class="ui-li-count">
-                                        4
-                                    </span>
-                                </a>
-                            </li>
-                            <li data-role="list-divider" role="heading">
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
             <div data-role="tabbar" data-iconpos="top" data-theme="a">
                 <ul>
                     <li>
@@ -184,49 +140,58 @@
                         </a>
                     </li>
                 </ul>
-            </div>
-        </div><!-- /header -->
+                </div><!--Tab Bar End -->
+            </div> <!-- Content End -->
+</div> <!-- Home End -->
+
+        
         <!-- addTask -->
-        <div data-role="page" data-theme="a" id="addTask" data-add-back-btn="true">
+        <div data-role="page" data-theme="a" id="addTask">
             
-            <div data-theme="a" data-role="header">
-                <h3>
-                    Add task
-                </h3>
-                <div data-role="popup" id="menu2">
+        <div data-role="header" data-theme="a">
+
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png" alt="logo"/> ToDoList</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
+                <div data-role="popup" id="menu">
                      <ul style="list-style: none; padding-left: 2px;">
                         <li>
-                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
                                 Home
                             </a>
-                             <li>
+                        <li>
                             <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
                                 9Grid
                             </a>
                         </li>
-                        </li>
+                        
                         <li>
                             <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
                                 Display All
                             </a>
                         </li>
+                        
                         <li>
                             <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
                                 About
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Work
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Misc
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div> <!-- Popup end -->
 
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
@@ -358,7 +323,7 @@
    </div> <!-- addTask End -->
     
        <!-- Form Errors -->
-        <div data-role="dialog" id="taskFormErrors" data-add-back-btn="true">
+        <div data-role="dialog" id="taskFormErrors"
         
         	<div data-role="header" data-position="fixed">
         		<h1>Missing Fields</h1>
@@ -374,45 +339,52 @@
         
      
         <!-- displayAll -->
-        <div data-role="page" data-theme="a" id="displayAll" data-add-back-btn="true">
-            <div data-theme="a" data-role="header" data-position="fixed">
-                <h3>
-                    Dispay All
-                </h3>
+        <div data-role="page" data-theme="a" id="displayAll">
+        
+        <div data-role="header" data-theme="a">
+
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
                 <div data-role="popup" id="menu">
                      <ul style="list-style: none; padding-left: 2px;">
                         <li>
-                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
                                 Home
                             </a>
-                             <li>
+                        <li>
                             <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
                                 9Grid
                             </a>
                         </li>
-                        </li>
+                        
                         <li>
                             <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
                                 Display All
                             </a>
                         </li>
+                        
                         <li>
                             <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
                                 About
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Work
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Misc
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div> <!-- Popup end -->
 
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
@@ -429,6 +401,7 @@
                     </ul>
                 </div>
             </div>
+            
             <div data-role="content" style="padding: 0px">
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup">
@@ -470,61 +443,52 @@
         </div>
         <!-- 9grid -->
         <div data-role="page" data-theme="a" id="9Grid">
-            <div data-theme="a" data-role="header" data-position="fixed">
-                <h3>
-                    ToDo List
-                </h3>
+                    <div data-role="header" data-theme="a">
+
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
                 <div data-role="popup" id="menu">
                      <ul style="list-style: none; padding-left: 2px;">
                         <li>
-                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
                                 Home
                             </a>
-                             <li>
+                        <li>
                             <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
                                 9Grid
                             </a>
                         </li>
-                        </li>
+                        
                         <li>
                             <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
                                 Display All
                             </a>
                         </li>
+                        
                         <li>
                             <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
                                 About
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Work
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Misc
                             </a>
                         </li>
                     </ul>
-                </div>
-
-                <div data-role="navbar" data-iconpos="top">
-                    <ul>
-                        <li>
-                            <a href="#construction" data-theme="" data-icon="delete">
-                                Clear Stored Tasks
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#addTask" data-theme="a" data-icon="plus">
-                                Add Task
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div data-role="content" style="padding: 15px">
+                </div> <!-- Popup end -->
+         </div> <!-- Header End -->
+         <div data-role="content" style="padding: 15px">
                 <div class="ui-grid-b">
                     <div class="ui-block-a">
                         <div style="">
@@ -602,60 +566,51 @@
         </div>
         <!-- misc -->
         <div data-role="page" data-theme="a" id="misc">
-            <div data-theme="a" data-role="header" data-position="fixed">
-                <h3>
-                    ToDo List
-                </h3>
+        <div data-role="header" data-theme="a">
+
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
                 <div data-role="popup" id="menu">
                      <ul style="list-style: none; padding-left: 2px;">
                         <li>
-                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
                                 Home
                             </a>
-                             <li>
+                        <li>
                             <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
                                 9Grid
                             </a>
                         </li>
-                        </li>
+                        
                         <li>
                             <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
                                 Display All
                             </a>
                         </li>
+                        
                         <li>
                             <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
                                 About
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Work
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Misc
                             </a>
                         </li>
                     </ul>
-                </div>
-
-                <div data-role="navbar" data-iconpos="top">
-                    <ul>
-                        <li>
-                            <a href="#construction" data-theme="" data-icon="delete">
-                                Clear Stored Tasks
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#addTask" data-theme="a" data-icon="plus">
-                                Add Task
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+                </div> <!-- Popup end -->
+         </div> <!-- Header End -->
             <div data-role="content" style="padding: 0px">
                 <ul data-role="listview" data-divider-theme="b" data-inset="true">
                     <li data-role="list-divider" role="heading">
@@ -692,44 +647,50 @@
         </div>
         <!-- personal -->
         <div data-role="page" data-theme="a" id="personal">
-            <div data-theme="a" data-role="header" data-position="fixed">
-                <h3>
-                    ToDo List
-                </h3>
+           <div data-role="header" data-theme="a">
+
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
                 <div data-role="popup" id="menu">
                      <ul style="list-style: none; padding-left: 2px;">
                         <li>
-                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
                                 Home
                             </a>
-                             <li>
+                        <li>
                             <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
                                 9Grid
                             </a>
                         </li>
-                        </li>
+                        
                         <li>
                             <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
                                 Display All
                             </a>
                         </li>
+                        
                         <li>
                             <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
                                 About
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Work
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Misc
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div> <!-- Popup end -->
 
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
@@ -945,44 +906,50 @@
         </div>
         <!-- school -->
         <div data-role="page" data-theme="a" id="school">
-            <div data-theme="a" data-role="header" data-position="fixed">
-                <h3>
-                    ToDo List
-                </h3>
+        <div data-role="header" data-theme="a">
+
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
                 <div data-role="popup" id="menu">
                      <ul style="list-style: none; padding-left: 2px;">
                         <li>
-                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
                                 Home
                             </a>
-                             <li>
+                        <li>
                             <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
                                 9Grid
                             </a>
                         </li>
-                        </li>
+                        
                         <li>
                             <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
                                 Display All
                             </a>
                         </li>
+                        
                         <li>
                             <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
                                 About
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Work
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Misc
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div> <!-- Popup end -->
 
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
@@ -1031,45 +998,51 @@
         </div>
         <!-- work -->
         <div data-role="page" data-theme="a" id="work">
-            <div data-theme="a" data-role="header" data-position="fixed">
-                <h3>
-                    ToDo List
-                </h3>
+        	<div data-role="header" data-theme="a">
+
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
                 <div data-role="popup" id="menu">
                      <ul style="list-style: none; padding-left: 2px;">
                         <li>
-                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
                                 Home
                             </a>
-                             <li>
+                        <li>
                             <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
                                 9Grid
                             </a>
                         </li>
-                        </li>
+                        
                         <li>
                             <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
                                 Display All
                             </a>
                         </li>
+                        
                         <li>
                             <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
                                 About
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Work
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Misc
                             </a>
                         </li>
                     </ul>
-                </div>
-
+                </div> <!-- Popup end -->
+                
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>
@@ -1117,44 +1090,50 @@
         </div>
         <!-- grocery -->
         <div data-role="page" data-theme="a" id="grocery">
-            <div data-theme="a" data-role="header" data-position="fixed">
-                <h3>
-                    ToDo List
-                </h3>
+        	<div data-role="header" data-theme="a">
+
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
                 <div data-role="popup" id="menu">
                      <ul style="list-style: none; padding-left: 2px;">
                         <li>
-                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
                                 Home
                             </a>
-                             <li>
+                        <li>
                             <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
                                 9Grid
                             </a>
                         </li>
-                        </li>
+                        
                         <li>
                             <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
                                 Display All
                             </a>
                         </li>
+                        
                         <li>
                             <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
                                 About
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Work
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Misc
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div> <!-- Popup end -->
 
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
@@ -1257,46 +1236,51 @@
         </div>
         <!-- about -->
         <div data-role="page" data-theme="a" id="about">
-            <div data-theme="a" data-role="header" data-position="fixed">
-                <h3>
-                    ToDo List
-                </h3>
+        <div data-role="header" data-theme="a">
+
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
                 <div data-role="popup" id="menu">
                      <ul style="list-style: none; padding-left: 2px;">
                         <li>
-                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
                                 Home
                             </a>
-                             <li>
+                        <li>
                             <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
                                 9Grid
                             </a>
                         </li>
-                        </li>
+                        
                         <li>
                             <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
                                 Display All
                             </a>
                         </li>
+                        
                         <li>
                             <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
                                 About
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Work
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Misc
                             </a>
                         </li>
                     </ul>
-                </div>
-
-            </div>
+                </div> <!-- Popup end -->
+         </div> <!-- Header End -->
             <div data-role="content" style="padding: 15px">
                 <div>
                     <p>
@@ -1335,46 +1319,51 @@
         </div>
         <!-- construction -->
         <div data-role="page" data-theme="a" id="construction">
-            <div data-theme="a" data-role="header" data-position="fixed">
-                <h3>
-                    ToDo List
-                </h3>
+        <div data-role="header" data-theme="a">
+
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
                 <div data-role="popup" id="menu">
                      <ul style="list-style: none; padding-left: 2px;">
                         <li>
-                            <a data-role="button" href="#home" data-theme="a" data-icon="">
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
                                 Home
                             </a>
-                             <li>
+                        <li>
                             <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
                                 9Grid
                             </a>
                         </li>
-                        </li>
+                        
                         <li>
                             <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
                                 Display All
                             </a>
                         </li>
+                        
                         <li>
                             <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
                                 About
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Work
                             </a>
                         </li>
+                       
                         <li>
                             <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Misc
                             </a>
                         </li>
                     </ul>
-                </div>
-
-            </div>
+                </div> <!-- Popup end -->
+         </div> <!-- Header End -->
             <div data-role="content" style="padding: 15px">
                 <div style=" text-align:center">
                     <img style="width: 75%; height: 50%" src="images/under-construction.jpg">
