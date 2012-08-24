@@ -3,14 +3,14 @@ $('#home').on('pageinit', function(){
 });	
 
 $('#addTask').on('pageinit', function(){
-		delete $.validator.methods.date;
+		//delete $.validator.methods.date;
 		var myform = $('#taskinfoform'),
 			tferrorslink= $('#tferrorslink')
 		;
 		
 		myform.validate({
 			invalidHandler: function(form, validator){
-				tferrorslink.click();
+				tferrorslink.click("refresh");
 				var html = '';
 				for(var key in validator.submitted){
 					var label = $('label[for^="'+ key +'"]').not('[generated]');
@@ -23,11 +23,18 @@ $('#addTask').on('pageinit', function(){
 				$("#taskFormErrors p").blink();
 				
 			},
+
+			//$("#taskFormErrors").validate;
 			submitHandler: function() {
 				var data = myform.serializeArray();
 			storeData(data);
-			}
+			},
+			//submitHandler: function() {
+			//var displayLink = myform.displayLink;
+			//displayLink.click(getData);
+			//}
 		});
+		
 
 	//any other code needed for addItem page goes here
 
@@ -35,23 +42,25 @@ $('#addTask').on('pageinit', function(){
 
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
 
-var autofillData = function (){
-
+var autoFillData = function (){
+		for(var n in json){
+		var id = Math.floor(Math.random()*100000000001);
+		localStorage.setItem(id, JSON.stringify(json[n]));
+		}
 };
 
 var getData = function(){
-
+		if(localStorage.length === 0){
+		alert("There are no task's to display. So default data was added.");
+		autoFillData();
+		}
 };
 
 var storeData = function(data){
-	//if there is no key, this is a new item and will need a key
-	var id 			= Math.floor(Math.random()*1000000001);
-	//Figure out which radio button is selected
-	//Save data to local storage: Use Stringify to convert our object to a string.
+	var id = Math.floor(Math.random()*100000001);
 	localStorage.setItem(id, JSON.stringify(data));
-	alert("Honey Do Saved!");
 	alert("Task Saved!");
-}; 
+};
 
 
 var	deleteItem = function (){
@@ -62,4 +71,12 @@ var clearLocal = function(){
 
 };
 
+	//Get the image for the right category
+var getImage = function (catName, makeSubList){
+		var imageLi = document.createElement('li');
+		makeSubList.appendChild(imageLi);
+		var newImg = document.createElement('img');
+		var setSrc = newImg.setAttribute("src", "images/"+ catName + ".png");
+		imageLi.appendChild(newImg);
+	}
 
