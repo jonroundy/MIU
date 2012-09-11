@@ -201,7 +201,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		}else{
 			alert("Task was not deleted!");
 		}
-	};
+	}
 
 	function clearLocal(){
 		if(localStorage.length === 0){
@@ -212,7 +212,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			window.location.reload();
 			return false;
 		}
-	};
+	}
 
 	function validate(eData){
 		//Define the elements we want to check

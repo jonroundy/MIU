@@ -162,7 +162,9 @@ $.fn.buttonMarkup = function( options ) {
 		}
 		
 		if ( o.inline !== undefined ) {			
-
+			// Used to control styling in headers/footers, where buttons default to `mini` style.
+			buttonClass += o.inline === false ? " ui-btn-block" : " ui-btn-inline";
+		}
 		
 		
 		if ( o.icon ) {
@@ -268,22 +270,6 @@ function closestEnabledButton( element ) {
 
     return element;
 }
-// My changes to be added to gold main
 
-$(document).ready(function () {
-         $("#topButton").delegate("a", "click", function () {
-         $("div.ui-input-search").find("input").val($(this).text());
-         $("div.ui-input-search").find("input").keyup();
-}
-
-//Disables onclick Header and footer hide
-$(document).on('pageinit','[data-role=page]', function(){
-    $('[data-position=fixed]').fixedtoolbar({ tapToggle:false});
-});
-
-//Add taphold to show and hide header and footer.
-$(document).on('taphold', '[data-role=page]', function(){
-    $('[data-position=fixed]').fixedtoolbar('toggle');
-});
 	
 })(jQuery);

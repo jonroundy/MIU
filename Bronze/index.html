@@ -1,349 +1,1411 @@
 <!DOCTYPE html>
 <html>
-<head>
-
-	<meta charset="utf-8" />
-
+    
+    <head>
     <title>ToDo List</title>
     <meta name="description" content="Todo List App, Just add and stay on task">
     <meta name="keywords" content="productivity, time management, mobile app">
     <meta name="robots" content="index, follow">
+    <!--  Mobile viewport -->
     <meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+    
     <!-- StyleSheets under here -->
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.css" />
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
     <link rel="stylesheet" href="css/themes/todo.css" />
-    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
-    <link rel="stylesheet" href="css/page2.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="css/jqmstyle.css" media="screen" type="text/css"/> 
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" /> -->
+    <link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css"/>
+    <link rel="stylesheet" href="css/font-awesome/jqm-icons.css"/>
+    	
     <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
 	<script src="js/libs/modernizr.custom.min.js"></script>
     </head>
+    
     <body>
-        <!-- Home -->
-        <div data-role="page" id="home" data-theme="a">
-            <div data-theme="a" data-role="header" data-position="fixed">
-                <h3>
-                    ToDo List
-                </h3>
+        
+        <!-- home -->
+        <div data-role="page" data-theme="a" id="home">
+        
+        <div data-role="header" data-theme="a">
+
+    <h3><img src="images/my_logo.png" height="20px" width="20px"/> ToDo List</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
           
-                <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Browse</a>
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
                 <div data-role="popup" id="menu">
                      <ul style="list-style: none; padding-left: 2px;">
                         <li>
-                            <a data-role="button" href="construction.html" rel="external" data-theme="a" data-icon="">
-                                Personal
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
+                                Home
+                            </a>
+                        <li>
+                            <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
+                                9Grid
                             </a>
                         </li>
+                        
                         <li>
-                            <a data-role="button" href="construction.html" rel="external" data-theme="a" data-icon="">
-                                School
+                            <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
+                                Display All
                             </a>
                         </li>
+                        
                         <li>
-                            <a data-role="button" href="#grocery" rel="external" data-theme="a" data-icon="">
-                                Grocery
-                            </a>
-                        </li>
-                        <li>
-                            <a data-role="button" href="construction.html" rel="external" data-theme="a" data-icon="">
-                                Work
-                            </a>
-                        </li>
-                        <li>
-                            <a data-role="button" href="construction.html" rel="external" data-theme="a" data-icon="">
-                                Misc
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                
-            </div><!-- /header -->
-
-   	<div data-role="content" style="padding: 15px" data-theme="a">
-
-    
-                <p> Keeping track has never been easier!</p>
-                
-                <a data-role="button" data-theme="a" data-icon="arrow-r" data-iconpos="left" href="#page2" />
-                	Start Here!
-                </a>
-            </div>
-            
-
-                                
-           
-            <div data-theme="a" data-role="footer" data-position="fixed">
-	             <div id="botnav"></div>
-                
-                <h3>
-                    ©2012<br /> Jon Roundy
-                </h3>
-            
-        	</div><!-- /footer -->
-</div><!-- /home -->
-
-<!-- Start of second page -->
-<div data-role="page" id="page2" data-theme="a" data-add-back-btn="true">
-            <div data-theme="a" data-role="header" data-position="fixed" data-mini="true">
-                <h3>ToDo List</h3>
-                
-                <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">
-                    Browse
-                </a>
-            <div data-role="popup" id="menu" data-rel="back">
-                     <ul style="list-style: none; padding-left: 2px;" data-mini="true">
-                        <li>
-                            <a data-role="button" href="construction.html" rel="external" data-theme="a" data-icon="">
-                                Personal
-                            </a>
-                        </li>
-                        <li>
-                            <a data-role="button" href="construction.html" rel="external" data-theme="a" data-icon="">
-                                School
-                            </a>
-                        </li>
-                        <li>
-                            <a data-role="button" href="#grocery" rel="external" data-theme="a" data-icon="">
-                                Grocery
-                            </a>
-                        </li>
-                        <li>
-                            <a data-role="button" href="construction.html" rel="external" data-theme="a" data-icon="">
-                                Work
-                            </a>
-                        </li>
-                        <li>
-                            <a data-role="button" href="construction.html" rel="external" data-theme="a" data-icon="">
-                                Misc
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div data-role="navbar" data-iconpos="top" data-mini="true">
-                    <ul>
-                        <li>
-                            <a href="#page2" id="clear" data-theme="" data-icon="delete">
-                                Clear Stored Data
-                            </a>
-                        </li>
-                        <li>
-                       
-                            <a href="#display" id="displayLink" data-theme="" data-icon="info" data-ajax="false">
-                                Display Data
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-           
-            </div>
-           
-
-            <div data-theme="a" data-role="footer" data-mini="true">
-	            <div id="botnav2"></div> <!-- Loads botNav through js
-         </div><!-- /footer -->
-</div><!-- /page -->
-            
-            <!-- ========== Start of Display page =========== -->
-<div data-role="page" id="display" data-theme="a" data-add-back-btn="true" data-dom-cache="true">
-            
-            <div data-theme="a" data-role="header" data-position="fixed" data-mini="true">
-                <h3>ToDo List</h3>
-                <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">
-                Browse
-                </a>
-                <div data-role="popup" id="menu">
-                </div>
-                
-                <div data-role="navbar" data-iconpos="top" data-mini="true" data-position="">
-                    <ul>
-                        <li>
-                            <a href="#page2" id="clear" data-theme="a" data-icon="delete" >Clear Stored Data</a>
-                    </li>
-                        <li>
-                        	<a href="#page2" id="addNew" data-theme="a" style="" data-icon="plus">Add New Item</a>
-                        </li>
-                    </ul>
-                </div>
-            </div><!-- Header -->
-                
-                <div id="items" data-role="content">
-                
-                </div>
-                 
-            <div data-theme="a" data-role="footer" data-position="fixed" data-mini="true">
-	             <div id="botnav"></div>
-      </div><!-- /footer -->
-</div><!-- /page -->
-       
-        
-                    <!-- ========== Start of grocery page =========== -->
-<div data-role="page" id="grocery" data-theme="a" data-add-back-btn="true">
-            
-            <div data-theme="a" data-role="header" data-position="fixed">
-                <h3>ToDo List</h3>
-                <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">
-                Menu
-                </a>
-                
-               <div data-role="navbar" data-iconpos="top">
-                    <ul>
-                        <li>
-                            <a href="construction.html" rel="external" data-theme="a" data-icon="">
-                                One
-                            </a>
-                        </li>
-                        <li>
-                            <a href="construction.html" rel="external" data-theme="" data-icon="">
-                                Two
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#about" rel="external" data-theme="a" data-icon="">
+                            <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
                                 About
                             </a>
                         </li>
-                    </ul>
-                </div> <!-- Nav Bar -->
-                <div data-role="popup" id="menu">
-                     <ul style="list-style: none; padding-left: 2px;">
+                       
                         <li>
-                            <a data-role="button" href="construction.html" rel="external" data-theme="a" data-icon="">
-                                Personal
-                            </a>
-                        </li>
-                        <li>
-                            <a data-role="button" href="construction.html" rel="external" data-theme="a" data-icon="">
-                                School
-                            </a>
-                        </li>
-                        <li>
-                            <a data-role="button" href="#grocery" rel="external" data-theme="a" data-icon="">
-                                Grocery
-                            </a>
-                        </li>
-                        <li>
-                            <a data-role="button" href="construction.html" rel="external" data-theme="a" data-icon="">
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Work
                             </a>
                         </li>
+                       
                         <li>
-                            <a data-role="button" href="construction.html" rel="external" data-theme="a" data-icon="">
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
                                 Misc
                             </a>
                         </li>
-                         
                     </ul>
-                </div> <!-- Popup Menu --> 
-            </div> <!-- Header -->
+                </div> <!-- Popup end -->
+         </div> <!-- Header End -->
+            
+            <div data-role="content"  data-theme="a">
+                <div align="center">
+	            <img src="images/featured.png" alt="featured" />	
+	            </div>
+	            <p>
+                    <a data-role="button" data-transition="pop" data-theme="c" href="#addTask" data-icon="arrow-r" data-iconpos="left" data-mini="true" data-ajax="false">
+                    Start here!
+                    </a>
+	            </p>
+	            
+                <div data-role="collapsible-set" data-theme="a">
+                	<h2>Browse</h2>
+                	
+                	<ul data-filter="true" data-role="listview" data-filter-placeholder="Search Categories...">
+                		
+                	<li>
+                		<a href="#grocery" data-icon="arrow-r" data-iconpos="left" data-mini="true">
+                		Grocery
+                		<span class="ui-li-count">4</span></a>
+                	</li>
+                			
+                	<li>
+                		<a href="#misc" data-icon="arrow-r" data-iconpos="left" data-mini="true">Misc<span class="ui-li-count">4</span></a>
+                	</li>
 
-           <div data-role="content">
-           		<ul data-role="listview" data-filter="true">
-           			<li>
-           				<a href="#">
-           					<img src="../Gold/images/Grocery.png" alt="Grocery">
-           					<h3> Items for the BBQ </h3>
-           					<p>Need to pick up meat for patties. Also do not forget the buns!</p>
-           				</a>
-           			</li>
-           			<li>
-           				<a href="#">
-           					<img src="../Gold/images/Grocery.png" alt="Grocery">
-           					<h3> Drinks </h3>
-           					<p>Pickup some Milk, Waters, 12 pack of soda.</p>
-           				</a>
-           			</li>
-           			<li>
-           				<a href="#">
-           					<img src="../Gold/images/Grocery.png" alt="Grocery">
-           					<h3> Dinner</h3>
-           					<p>Stop by Food World and pick up some chick and veggies to cook for dinner.</p>
-           				</a>
-           			</li>
-           			<li>
-           				<a href="#">
-           					<img src="../Gold/images/Grocery.png" alt="Grocery">
-           					<h3> Taco Night! </h3>
-           					<p>Pick up some taco seasoning and some chick for tacos tonight.</p>
-           				</a>
-           			</li>
-           			<li>
-           				<a href="#">
-           					<img src="../Gold/images/Grocery.png" alt="Grocery">
-           					<h3> Grilling tonight! </h3>
-           					<p>Need to pick up meat for patties. Also do not forget the buns!</p>
-           				</a>
-           					<li></li>
-           			</li>
-           			</ul>
-           	<div data-role="collapsible-set" data-theme="b">
-           	<div data-role="collapsible" data-collapsed="false" data-theme="b">
-           			<h3>​Category List: School​</h3>​
- 
-           			<li>​My Task Name: Test 3​</li>​
- 
-           			<li>​Date: 2018-07-12​</li>​
- 
-           			<li>​Time: 9:00pm​</li>​
- 
-           			<li>​Urgent: no​</li>​
- 
-           			<li>​Estimated Time: 6​</li>​
- 
-           			<li>​Notes: This is a test 3​</li>​
-           	</div>
-           	<div data-role="collapsible">
-           			<h3>​Category List: Work​</h3>​
- 
-           			<li>​My Task Name: Test 3​</li>​
- 
-           			<li>​Date: 2018-07-12​</li>​
- 
-           			<li>​Time: 9:00pm​</li>​
- 
-           			<li>​Urgent: no​</li>​
- 
-           			<li>​Estimated Time: 6​</li>​
- 
-           			<li>​Notes: This is a test 3​</li>​
-           	</div>
-           	<div data-role="collapsible">
- 
-           			<h3>​Category List: Misc​</h3>​
- 
-           			<li>​My Task Name: Test 3​</li>​
- 
-           			<li>​Date: 2018-07-12​</li>​
- 
-           			<li>​Time: 9:00pm​</li>​
- 
-           			<li>​Urgent: no​</li>​
- 
-					<li>​Estimated Time: 6​</li>​
+                	<li>
+                		<a href="#personal" data-icon="arrow-r" data-iconpos="left" data-mini="true">Personal<span class="ui-li-count">4</span></a>
+                	</li>
 
-           	</div>
-     	</div>
-   </div> <!-- Content -->
+                	<li>
+                		<a href="#school" data-icon="arrow-r" data-iconpos="left" data-mini="true">School<span class="ui-li-count">4</span></a>
+                	</li>
 
-            <div data-theme="a" data-role="footer" data-position="fixed">
-	            	<div id="botnav4"></div>
-	            	
-                </div><!-- /footer -->
-        </div><!-- /page -->
+                	<li>
+                		<a href="#work" data-icon="arrow-r" data-iconpos="left" data-mini="true">Work<span class="ui-li-count">4</span></a>
+                	</li>
+
+                	</ul>
+                	
+                </div>
+                
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#home" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
+                            GitHub Pages
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" data-theme="" data-icon="info">
+                            About
+                        </a>
+                    </li>
+                </ul>
+                </div><!--Tab Bar End -->
+            </div> <!-- Content End -->
+</div> <!-- Home End -->
+
         
-       
+        <!-- addTask -->
+        <div data-role="page" data-theme="a" id="addTask">
+            
+        <div data-role="header" data-theme="a">
+
+    <h3><img src="images/my_logo.png" alt="logo"/> ToDo List</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
+                <div data-role="popup" id="menu">
+                     <ul style="list-style: none; padding-left: 2px;">
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
+                                Home
+                            </a>
+                        <li>
+                            <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
+                                9Grid
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
+                                Display All
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
+                                About
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Work
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Misc
+                            </a>
+                        </li>
+                    </ul>
+                </div> <!-- Popup end -->
+
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#" data-theme="" data-icon="delete" id="clear">
+                                Clear Stored Tasks
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#displayAll" data-theme="a" data-icon="info" id="displayLink">
+                                Display Tasks
+                            </a>
+                        </li>
+                    </ul>
+                </div> <!-- navbar end -->
+            </div> <!-- header end -->
+            
+            <div data-role="content">
+                
+                
+                
+                <div>
+                    <p style="text-align: justify; " data-mce-style="text-align: justify;">
+                        <b>Task info</b>
+                    </p>
+                    <p style="text-align: center; " data-mce-style="text-align: center;">
+                        <b>*<span style="color: rgb(255, 0, 0); ">fields are required.</span></b>
+                    </p>
+                </div>
+                
+                <form action="#" method="post" id="taskinfoform">
+                
+                <div data-role="fieldcontain">
+                    <label for="categoryList">
+                        *Select Category:
+                    </label>
+                    <select name="categoryList" id="categoryList" data-mini="true" data-native-menu="false" class="required">
+                        <option data-placeholder="true" value="" id=""> --Choose A Category-- </option>
+                        <option value="Grocery">
+                            Grocery
+                        </option>
+                        <option value="Misc">
+                            Misc
+                        </option>
+                        <option value="Personal">
+                            Personal
+                        </option>
+                        <option value="School">
+                            School
+                        </option>
+                        <option value="Work">
+                            Work
+                        </option>
+                    </select>
+                </div>
+                
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="taskname">*Task Name:</label>
+                        <input name="taskname" id="taskname" placeholder="e.g. Project due soon!" value="" type="text" class="required">
+                    </fieldset>
+                </div>
+                
+                <div data-role="fieldcontain">
+                	<fieldset data-role="controlgroup" data-mini="true">
+                		<label for="date">*Date:</label>
+                		<input name="date" id="date" type="date" data-role="datebox" data-options='{"mode": "calbox"}' class="required date" value="" placeholder="Month/Day/Year">
+                	</fieldset>
+                </div>
+
+                
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="time">*Time:</label>
+                        <input name="time" id="time" placeholder="12:00PM" value="" type="time" class="required time">
+                    </fieldset>
+                </div>
+                
+                <div data-role="fieldcontain">
+                        <label for="esttime">Estimated amount of time (In hours):</label>
+                        <input type="range" name="esttime" id="esttime" value="5" min="1" max="24" data-highlight="true">
+                    
+                </div>
+                
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+                        <legend></legend>
+                        <input name="urgent" id="urgent" type="checkbox">
+                        <label for="urgent">Urgent!</label>
+                    </fieldset>
+                </div>
+                
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textbox">
+                            Notes:
+                        </label>
+                        <textarea name="textbox" id="textbox" placeholder="Enter notes here...."></textarea>
+                    </fieldset>
+                </div>
+
+                <div data-role="fieldcontain">
+                		<input type="reset" data-theme="a" data-icon="refresh" data-iconpos="left" value="Reset" data-inline="true"/>
+                		
+                		<button type="submit" data-theme="b" id="submit" name="submit" value="submit-value" class="ui-btn-hidden" aria-disabled="false" data-icon="arrow-r" data-iconpos="left" data-inline="true" target="#displayAll")>Save Task</button>
+                		
+
+                </div>
+            
+                <a href="#taskFormErrors" id="tferrorslink" data-rel="dialog" data-transition="pop">Open Errors</a>
+            
+            </form>
+           
+            	<div data-role="tabbar" data-iconpos="top" data-theme="a" data-position="fixed" data-tap-toggle="false" >
+               	 	<ul>
+                  	  <li>
+                        	<a href="#home" data-theme="" data-icon="home">
+                            	Home
+                            </a>
+                            </li>
+                            <li>
+                            <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
+                            	GitHub Pages
+                            </a>
+                            </li>
+                      <li>
+                        	<a href="#about" data-theme="" data-icon="info">
+                            	About
+                            </a>
+                      </li>
+                    </ul>
+            </div>        
+           </div>
+           </div>
+   </div> <!-- addTask End -->
+    
+        <!-- Form Errors -->
+        <div data-role="dialog" id="taskFormErrors">
         
+        	<div data-role="header" data-position="fixed">
+        		<h1>Missing Fields</h1>
+        	</div>
+        	
+        	<div data-role="content">
+        		<p>Please correct the following fields to continue.<p>
+        		<ul></ul> <!-- String pulled in from main.js addTask function. -->
+        	</div>
+        	
+        </div><!-- Form Errors End -->
         
+        <!-- displayAll -->
+        <div data-role="page" data-theme="a" id="displayAll">
+        
+        <div data-role="header" data-theme="a">
+
+    <h3><img src="images/my_logo.png"/> ToDo List</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
+                <div data-role="popup" id="menu">
+                     <ul style="list-style: none; padding-left: 2px;">
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
+                                Home
+                            </a>
+                        <li>
+                            <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
+                                9Grid
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
+                                Display All
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
+                                About
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Work
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Misc
+                            </a>
+                        </li>
+                    </ul>
+                </div> <!-- Popup end -->
+
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#" data-theme="" data-icon="delete" id="clear">
+                                Clear Stored Tasks
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#addTask" data-theme="a" data-icon="plus">
+                                Add Task
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div data-role="content" id="datafield">
+            	<ul id="dfId" data-filter="true" data-role="listview" data-filter-placeholder="Search Tasks...">
+            	
+            	</ul>
+                
+            </div>
+            
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#home" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
+                            GitHub Pages
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" data-theme="" data-icon="info">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 9grid -->
+        <div data-role="page" data-theme="a" id="9Grid">
+                    <div data-role="header" data-theme="a">
+
+    <h3><img src="images/my_logo.png"/> ToDo List</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
+                <div data-role="popup" id="menu">
+                     <ul style="list-style: none; padding-left: 2px;">
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
+                                Home
+                            </a>
+                        <li>
+                            <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
+                                9Grid
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
+                                Display All
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
+                                About
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Work
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Misc
+                            </a>
+                        </li>
+                    </ul>
+                </div> <!-- Popup end -->
+         </div> <!-- Header End -->
+         <div data-role="content" style="padding: 15px">
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                        <div style="">
+                            <img style="width: 80px; height: 80px" src="images/Misc.png">
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div style=" text-align:center">
+                            <img style="width: 80px; height: 80px" src="images/Personal.png">
+                        </div>
+                    </div>
+                    <div class="ui-block-c">
+                        <div style=" text-align:right">
+                            <img style="width: 80px; height: 80px" src="images/Grocery.png">
+                        </div>
+                    </div>
+                    <div class="ui-block-a">
+                        <div style="">
+                            <img style="width: 80px; height: 80px" src="images/Misc.png">
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div style=" text-align:center">
+                            <img style="width: 80px; height: 80px" src="images/School.png">
+                        </div>
+                    </div>
+                    <div class="ui-block-c">
+                        <div style=" text-align:right">
+                            <img style="width: 80px; height: 80px" src="images/Misc.png">
+                        </div>
+                    </div>
+                    <div class="ui-block-a">
+                        <div style="">
+                            <img style="width: 80px; height: 80px" src="images/School.png">
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div style=" text-align:center">
+                            <img style="width: 80px; height: 80px" src="images/Personal.png">
+                        </div>
+                    </div>
+                    <div class="ui-block-c">
+                        <div style=" text-align:right">
+                            <img style="width: 80px; height: 80px" src="images/School.png">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        <b>
+                            Example of 9 Grid
+                        </b>
+                    </p>
+                </div>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#home" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
+                            GitHub Pages
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" data-theme="" data-icon="info">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- misc -->
+        <div data-role="page" data-theme="a" id="misc">
+        <div data-role="header" data-theme="a">
+
+    <h3><img src="images/my_logo.png"/> ToDo List</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
+                <div data-role="popup" id="menu">
+                     <ul style="list-style: none; padding-left: 2px;">
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
+                                Home
+                            </a>
+                        <li>
+                            <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
+                                9Grid
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
+                                Display All
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
+                                About
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Work
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Misc
+                            </a>
+                        </li>
+                    </ul>
+                </div> <!-- Popup end -->
+         </div> <!-- Header End -->
+            <div data-role="content" style="padding: 0px">
+                <ul data-role="listview" data-divider-theme="b" data-inset="true">
+                    <li data-role="list-divider" role="heading">
+                        Divider
+                    </li>
+                    <li data-theme="c">
+                        <a href="#" data-transition="slide">
+                            Button
+                        </a>
+                    </li>
+                    <li data-role="list-divider" role="heading">
+                    </li>
+                </ul>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#home" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
+                            GitHub Pages
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" data-theme="" data-icon="info">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- personal -->
+        <div data-role="page" data-theme="a" id="personal">
+           <div data-role="header" data-theme="a">
+
+    <h3><img src="images/my_logo.png"/> ToDo List</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
+                <div data-role="popup" id="menu">
+                     <ul style="list-style: none; padding-left: 2px;">
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
+                                Home
+                            </a>
+                        <li>
+                            <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
+                                9Grid
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
+                                Display All
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
+                                About
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Work
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Misc
+                            </a>
+                        </li>
+                    </ul>
+                </div> <!-- Popup end -->
+
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#construction" data-theme="" data-icon="delete">
+                                Clear Stored Tasks
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#addTask" data-theme="a" data-icon="plus">
+                                Add Task
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="content" style="padding: 15px" >
+                
+                <div data-filter="true" data-role="collapsible-set" data-theme="" data-content-theme="">
+                    <div data-role="collapsible" data-collapsed="false" >
+                        <h3>
+                            Take out Trash
+                        </h3>
+                        <div style="">
+                            <img style="width: 80px; height: 80px" src="images/Personal.png">
+                        </div>
+                        <div>
+                            <p>
+                                <b>
+                                    ﻿My Task Name: Take out trash.
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Date:8/16/12
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Time: 9:00pm
+                                </b>
+                                <span style="background-color: rgb(0, 0, 0); " data-mce-style="background-color: #000000;">
+                                    <b>
+                                        ﻿
+                                    </b>
+                                </span>
+                            </p>
+                            <p>
+                                <b>
+                                    Urgent: yes
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Estimated Time: 1
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Notes: Do not forget or wife will yell at you.
+                                </b>
+                            </p>
+                        </div>
+                    </div>
+                    <div data-role="collapsible" data-collapsed="true">
+                        <h3>
+                            Walk the dog
+                        </h3>
+                        <div style="">
+                            <img style="width: 80px; height: 80px" src="images/Personal.png">
+                        </div>
+                        <div>
+                            <p>
+                                <b>
+                                    My Task Name: Walk the dog.
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Date:8/16/12
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Time: 11:00pm
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Urgent: yes
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Estimated Time: 1
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Notes: Do not forget or wife will yell at you.
+                                </b>
+                            </p>
+                        </div>
+                    </div>
+                    <div data-role="collapsible" data-collapsed="true">
+                        <h3>
+                            Clean Office
+                        </h3>
+                        <div style="">
+                            <img style="width: 80px; height: 80px" src="images/Personal.png">
+                        </div>
+                        <div>
+                            <p>
+                                <b>
+                                    My Task Name: Clean office.
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Date:8/16/12
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Time: 9:00pm
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Urgent: yes
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Estimated Time: 1
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Notes: Do not forget you look like a slob in your review videos.
+                                </b>
+                            </p>
+                        </div>
+                    </div>
+                    <div data-role="collapsible" data-collapsed="true">
+                        <h3>
+                            Pick up meds
+                        </h3>
+                        <div style="">
+                            <img style="width: 80px; height: 80px" src="images/Personal.png">
+                        </div>
+                        <div>
+                            <p>
+                                <b>
+                                    My Task Name: Pick up meds.
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Date:8/16/12
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Time: 9:00pm
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Urgent: yes
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Estimated Time: 1
+                                </b>
+                            </p>
+                            <p>
+                                <b>
+                                    Notes: Stop by CVS and get meds.
+                                </b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#home" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
+                            GitHub Pages
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" data-theme="" data-icon="info">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- school -->
+        <div data-role="page" data-theme="a" id="school">
+        <div data-role="header" data-theme="a">
+
+    <h3><img src="images/my_logo.png"/> ToDo List</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
+                <div data-role="popup" id="menu">
+                     <ul style="list-style: none; padding-left: 2px;">
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
+                                Home
+                            </a>
+                        <li>
+                            <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
+                                9Grid
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
+                                Display All
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
+                                About
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Work
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Misc
+                            </a>
+                        </li>
+                    </ul>
+                </div> <!-- Popup end -->
+
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#construction" data-theme="" data-icon="delete">
+                                Clear Stored Tasks
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#addTask" data-theme="a" data-icon="plus">
+                                Add Task
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="content" style="padding: 15px">
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="searchinput5">
+                        </label>
+                        <input name="" id="searchinput5" placeholder="Search tasks..." value=""
+                        type="search">
+                    </fieldset>
+                </div>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#home" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
+                            GitHub Pages
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" data-theme="" data-icon="info">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- work -->
+        <div data-role="page" data-theme="a" id="work">
+        	<div data-role="header" data-theme="a">
+
+    <h3><img src="images/my_logo.png"/> ToDo List</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
+                <div data-role="popup" id="menu">
+                     <ul style="list-style: none; padding-left: 2px;">
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
+                                Home
+                            </a>
+                        <li>
+                            <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
+                                9Grid
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
+                                Display All
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
+                                About
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Work
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Misc
+                            </a>
+                        </li>
+                    </ul>
+                </div> <!-- Popup end -->
+                
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#construction" data-theme="" data-icon="delete">
+                                Clear Stored Tasks
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#addTask" data-theme="a" data-icon="plus">
+                                Add Task
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="content" style="padding: 15px">
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="searchinput6">
+                        </label>
+                        <input name="workSearch" id="searchinput6" placeholder="Search tasks..."
+                        value="" type="search">
+                    </fieldset>
+                </div>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#home" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
+                            GitHub Pages
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" data-theme="" data-icon="info">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- grocery -->
+        <div data-role="page" data-theme="a" id="grocery">
+        	<div data-role="header" data-theme="a">
+
+    <h3><img src="images/my_logo.png"/> ToDo List</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
+                <div data-role="popup" id="menu">
+                     <ul style="list-style: none; padding-left: 2px;">
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
+                                Home
+                            </a>
+                        <li>
+                            <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
+                                9Grid
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
+                                Display All
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
+                                About
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Work
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Misc
+                            </a>
+                        </li>
+                    </ul>
+                </div> <!-- Popup end -->
+
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#construction" data-theme="" data-icon="delete">
+                                Clear Stored Tasks
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#addTask" data-theme="a" data-icon="plus">
+                                Add Task
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="content" style="padding: 15px">
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="searchinput7">
+                        </label>
+                        <input name="" id="searchinput7" placeholder="Search tasks..." value=""
+                        type="search">
+                    </fieldset>
+                </div>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                        <div style="">
+                            <img style="width: 80px; height: 80px" src="images/Misc.png">
+                        </div>
+                        <div style="">
+                            <img style="width: 80px; height: 80px" src="images/School.png">
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div style=" text-align:center">
+                            <img style="width: 80px; height: 80px" src="images/Personal.png">
+                        </div>
+                        <div style=" text-align:center">
+                            <img style="width: 80px; height: 80px" src="images/Grocery.png">
+                        </div>
+                    </div>
+                    <div class="ui-block-c">
+                        <div style=" text-align:right">
+                            <img style="width: 80px; height: 80px" src="images/Grocery.png">
+                        </div>
+                        <div style=" text-align:right">
+                            <img style="width: 80px; height: 80px" src="images/Misc.png">
+                        </div>
+                    </div>
+                    <div class="ui-block-a">
+                        <div style="">
+                            <img style="width: 80px; height: 80px" src="images/Misc.png">
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div style=" text-align:center">
+                            <img style="width: 80px; height: 80px" src="images/School.png">
+                        </div>
+                    </div>
+                    <div class="ui-block-c">
+                        <div style=" text-align:right">
+                            <img style="width: 80px; height: 80px" src="images/Misc.png">
+                        </div>
+                    </div>
+                    <div class="ui-block-a">
+                    </div>
+                    <div class="ui-block-b">
+                    </div>
+                    <div class="ui-block-c">
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        <b>
+                            Example of 9 Grid
+                        </b>
+                    </p>
+                </div>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#home" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
+                            GitHub Pages
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" data-theme="" data-icon="info">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- about -->
+        <div data-role="page" data-theme="a" id="about">
+        <div data-role="header" data-theme="a">
+
+    <h3><img src="images/my_logo.png"/> ToDo List</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
+                <div data-role="popup" id="menu">
+                     <ul style="list-style: none; padding-left: 2px;">
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
+                                Home
+                            </a>
+                        <li>
+                            <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
+                                9Grid
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
+                                Display All
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
+                                About
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Work
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Misc
+                            </a>
+                        </li>
+                    </ul>
+                </div> <!-- Popup end -->
+         </div> <!-- Header End -->
+            <div data-role="content" style="padding: 15px">
+                <div>
+                    <p>
+                        <b>
+                            ToDo List is a app that helps you keep track of day to day tasks.
+                            <br>
+                            <br>
+                            It is being actively&nbsp;developed by:
+                            <br>
+                            Jon Roundy in Rainbow City, AL
+                        </b>
+                    </p>
+                </div>
+                <img src="https://maps.googleapis.com/maps/api/staticmap?center=Rainbow City, AL&amp;zoom=14&amp;size=270x200&amp;markers=Rainbow City, AL&amp;sensor=false"
+                width="270" height="200">
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#home" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
+                            GitHub Pages
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" data-theme="" data-icon="info">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- construction -->
+        <div data-role="page" data-theme="a" id="construction">
+        <div data-role="header" data-theme="a">
+
+    <h3><img src="images/my_logo.png"/> ToDo List</h3>
+    <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
+                <div data-role="popup" id="menu">
+                     <ul style="list-style: none; padding-left: 2px;">
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
+                                Home
+                            </a>
+                        <li>
+                            <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
+                                9Grid
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
+                                Display All
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
+                                About
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Work
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Misc
+                            </a>
+                        </li>
+                    </ul>
+                </div> <!-- Popup end -->
+         </div> <!-- Header End -->
+            <div data-role="content" style="padding: 15px">
+                <div style=" text-align:center">
+                    <img style="width: 75%; height: 50%" src="images/under-construction.jpg">
+                </div>
+                <div>
+                    <p style="text-align: center; ">
+                        <b>
+                            Please pardon our progess.
+                        </b>
+                    </p>
+                    <p style="text-align: center; ">
+                        <b>
+                            ToDo List is a currently under construction.
+                            <br>
+                            <br>
+                            Please check back soon to see what new features have been added.
+                        </b>
+                    </p>
+                    <p style="text-align: center; ">
+                        <b>
+                            Use the Home button to return to a functioning part of the pp.
+                        </b>
+                    </p>
+                </div>
+            </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#home" data-theme="" data-icon="home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://jonroundyfs.github.com/MIU/" rel="external" data-theme="" data-icon="star">
+                            GitHub Pages
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" data-theme="" data-icon="info">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <!-- JavaScript under here -->
-        <script src="js/json.js" type="text/javascript"></script>
-        <script src="js/main.js" type="text/javascript"></script>
         <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.js"></script>
-        <script src="js/page2.js" type="text/javascript"></script>
+        <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.core.min.js"></script>
+        <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.calbox.min.js"></script>
+        <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en_US.utf8.js"></script>
+        <script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="js/libs/jquery.blink.js"></script>
+        <script type="text/javascript" src="js/json.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/jqm.js"></script>
         <script> 
 	        	$.mobile.page.prototype.options.domCache = true; 
 	    </script>
         
-    	
-
     </body>
+
 </html>

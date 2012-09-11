@@ -5,7 +5,7 @@ var json = {
 		"date": ["Date:", "2012-07-12"],
 		"time": ["Time:", "12:00pm"],
 		"urgent": ["Urgent:", "on"],
-		"slider1": ["Estimated Time:", "12"],
+		"esttime": ["Estimated Time:", "12"],
 		"textbox": ["Notes:", "This is a test"]
 	},
 	"task2": {
@@ -14,7 +14,7 @@ var json = {
 		"date": ["Date:", "2012-07-12"],
 		"time": ["Time:", "4:00pm"],
 		"urgent": ["Urgent:", "false"],
-		"slider1": ["Estimated Time:", "5"],
+		"esttime": ["Estimated Time:", "5"],
 		"textbox": ["Notes:", "This is a test 2"]
 	},
 	"task3": {
@@ -23,7 +23,7 @@ var json = {
 		"date": ["Date:", "2012-08-06"],
 		"time": ["Time:", "9:00pm"],
 		"urgent": ["Urgent:", "no"],
-		"slider1": ["Estimated Time:", "6"],
+		"esttime": ["Estimated Time:", "6"],
 		"textbox": ["Notes:", "This is a test 3"]
 	},
 	"task4": {
@@ -32,7 +32,7 @@ var json = {
 		"date": ["Date:", "2012-08-06"],
 		"time": ["Time:", "9:00am"],
 		"urgent": ["Urgent:", "yes"],
-		"slider1": ["Estimated Time:", "1"],
+		"esttime": ["Estimated Time:", "1"],
 		"textbox": ["Notes:", "Check Assignments"]
 	},
 	"task5": {
@@ -41,7 +41,7 @@ var json = {
 		"date": ["Date:", "2018-07-12"],
 		"time": ["Time:", "9:00pm"],
 		"urgent": ["Urgent:", "no"],
-		"slider1": ["Estimated Time:", "6"],
+		"esttime": ["Estimated Time:", "6"],
 		"textbox": ["Notes:", "Apples: 5 <br /> Pears: 3 "]
 	},
 	"task6": {
@@ -50,7 +50,7 @@ var json = {
 		"date": ["Date:", "2018-07-12"],
 		"time": ["Time:", "9:00pm"],
 		"urgent": ["Urgent:", "no"],
-		"slider1": ["Estimated Time:", "6"],
+		"esttime": ["Estimated Time:", "6"],
 		"textbox": ["Notes:", "This is a test 3"]
 	},
 	"task7": {
@@ -59,7 +59,7 @@ var json = {
 		"date": ["Date:", "2018-07-12"],
 		"time": ["Time:", "9:00pm"],
 		"urgent": ["Urgent:", "no"],
-		"slider1": ["Estimated Time:", "6"],
+		"esttime": ["Estimated Time:", "6"],
 		"textbox": ["Notes:", "This is a test 3"]
 	},
 	"task8": {
@@ -68,7 +68,7 @@ var json = {
 		"date": ["Date:", "2018-07-12"],
 		"time": ["Time:", "9:00pm"],
 		"urgent": ["Urgent:", "no"],
-		"slider1": ["Estimated Time:", "6"],
+		"esttime": ["Estimated Time:", "6"],
 		"textbox": ["Notes:", "This is a test 3"]
 	},
 	"task9": {
@@ -77,7 +77,7 @@ var json = {
 		"date": ["Date:", "2018-07-12"],
 		"time": ["Time:", "9:00pm"],
 		"urgent": ["Urgent:", "no"],
-		"slider1": ["Estimated Time:", "6"],
+		"esttime": ["Estimated Time:", "6"],
 		"textbox": ["Notes:", "This is a test 3"]
 	},
 	"task10": {
@@ -86,7 +86,7 @@ var json = {
 		"date": ["Date:", "2018-07-12"],
 		"time": ["Time:", "9:00pm"],
 		"urgent": ["Urgent:", "no"],
-		"slider1": ["Estimated Time:", "6"],
+		"esttime": ["Estimated Time:", "6"],
 		"textbox": ["Notes:", "This is a test 3"]
 	},
 	"task11": {
@@ -95,7 +95,7 @@ var json = {
 		"date": ["Date:", "2018-07-12"],
 		"time": ["Time:", "9:00pm"],
 		"urgent": ["Urgent:", "no"],
-		"slider1": ["Estimated Time:", "6"],
+		"esttime": ["Estimated Time:", "6"],
 		"textbox": ["Notes:", "This is a test 3"]
 	},
 	"task12": {
@@ -104,7 +104,7 @@ var json = {
 		"date": ["Date:", "2018-07-12"],
 		"time": ["Time:", "9:00pm"],
 		"urgent": ["Urgent:", "no"],
-		"slider1": ["Estimated Time:", "6"],
+		"esttime": ["Estimated Time:", "6"],
 		"textbox": ["Notes:", "This is a test 3"]
 	},
 	"task13": {
@@ -113,7 +113,7 @@ var json = {
 		"date": ["Date:", "2018-07-12"],
 		"time": ["Time:", "9:00pm"],
 		"urgent": ["Urgent:", "no"],
-		"slider1": ["Estimated Time:", "6"],
+		"esttime": ["Estimated Time:", "6"],
 		"textbox": ["Notes:", "This is a test 3"]
 	},
 	"task14": {
@@ -122,7 +122,7 @@ var json = {
 		"date": ["Date:", "2018-07-12"],
 		"time": ["Time:", "9:00pm"],
 		"urgent": ["Urgent:", "no"],
-		"slider1": ["Estimated Time:", "6"],
+		"esttime": ["Estimated Time:", "6"],
 		"textbox": ["Notes:", "This is a test 3"]
 	},
 	"task15": {
@@ -131,7 +131,7 @@ var json = {
 		"date": ["Date:", "2018-07-12"],
 		"time": ["Time:", "9:00pm"],
 		"urgent": ["Urgent:", "no"],
-		"slider1": ["Estimated Time:", "6"],
+		"esttime": ["Estimated Time:", "6"],
 		"textbox": ["Notes:", "This is a test 3"]
 	},
 	"task16": {
@@ -140,7 +140,7 @@ var json = {
 		"date": ["Date:", "2018-07-12"],
 		"time": ["Time:", "9:00pm"],
 		"urgent": ["Urgent:", "no"],
-		"slider1": ["Estimated Time:", "6"],
+		"esttime": ["Estimated Time:", "6"],
 		"textbox": ["Notes:", "This is a test 3"]
 	},
 	"task17": {
@@ -149,7 +149,7 @@ var json = {
 		"date": ["Date:", "2018-07-12"],
 		"time": ["Time:", "9:00pm"],
 		"urgent": ["Urgent:", "no"],
-		"slider1": ["Estimated Time:", "6"],
+		"esttime": ["Estimated Time:", "6"],
 		"textbox": ["Notes:", "This is a test 3"]
 	},
 	"task18": {
@@ -158,7 +158,7 @@ var json = {
 		"date": ["Date:", "2018-07-12"],
 		"time": ["Time:", "9:00pm"],
 		"urgent": ["Urgent:", "no"],
-		"slider1": ["Estimated Time:", "6"],
+		"esttime": ["Estimated Time:", "6"],
 		"textbox": ["Notes:", "This is a test 3"]
 	},
 	"task19": {
@@ -167,7 +167,7 @@ var json = {
 		"date": ["Date:", "2018-07-12"],
 		"time": ["Time:", "9:00pm"],
 		"urgent": ["Urgent:", "no"],
-		"slider1": ["Estimated Time:", "6"],
+		"esttime": ["Estimated Time:", "6"],
 		"textbox": ["Notes:", "This is a test 3"]
 	},
 	"task20": {
@@ -176,7 +176,7 @@ var json = {
 		"date": ["Date:", "2018-07-12"],
 		"time": ["Time:", "9:00pm"],
 		"urgent": ["Urgent:", "no"],
-		"slider1": ["Estimated Time:", "6"],
+		"esttime": ["Estimated Time:", "6"],
 		"textbox": ["Notes:", "This is a test 3"]
 	}																	
 }

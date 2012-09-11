@@ -33,7 +33,7 @@
         
         <div data-role="header" data-theme="a">
 
-    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png" height="20px" width="20px"/> ToDo List</h3>
     <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
           
     <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
@@ -81,11 +81,12 @@
                 <div align="center">
 	            <img src="images/featured.png" alt="featured" />	
 	            </div>
-
-                    <a data-role="button" data-transition="pop" data-theme="c" href="#addTask" data-icon="arrow-r" data-iconpos="left" data-mini="true">
+	            <p>
+                    <a data-role="button" data-transition="pop" data-theme="c" href="#addTask" data-icon="arrow-r" data-iconpos="left" data-mini="true" data-ajax="false">
                     Start here!
                     </a>
-                
+	            </p>
+	            
                 <div data-role="collapsible-set" data-theme="a">
                 	<h2>Browse</h2>
                 	
@@ -145,7 +146,7 @@
             
         <div data-role="header" data-theme="a">
 
-    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png" alt="logo"/> ToDoList</h3>
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png" alt="logo"/> ToDo List</h3>
     <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
           
     <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
@@ -191,12 +192,12 @@
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>
-                            <a href="#construction" data-theme="" data-icon="delete">
+                            <a href="#" data-theme="" data-icon="delete" id="clear">
                                 Clear Stored Tasks
                             </a>
                         </li>
                         <li>
-                            <a href="#" data-theme="a" data-icon="info" id="displayLink">
+                            <a href="#displayAll" data-theme="a" data-icon="info" id="displayLink">
                                 Display Tasks
                             </a>
                         </li>
@@ -204,7 +205,7 @@
                 </div> <!-- navbar end -->
             </div> <!-- header end -->
             
-            <div data-role="content" style="padding: 0px">
+            <div data-role="content">
                 
                 
                 
@@ -217,13 +218,14 @@
                     </p>
                 </div>
                 
-                <form action="#addTask" method="get" id="taskinfoform" name="taskinfoform">
+                <form action="#" method="post" id="taskinfoform">
+                
                 <div data-role="fieldcontain">
                     <label for="categoryList">
                         *Select Category:
                     </label>
                     <select name="categoryList" id="categoryList" data-mini="true" data-native-menu="false" class="required">
-                        <option data-placeholder="true" value> --Choose A Category-- </option>
+                        <option data-placeholder="true" value="" id=""> --Choose A Category-- </option>
                         <option value="Grocery">
                             Grocery
                         </option>
@@ -249,9 +251,11 @@
                     </fieldset>
                 </div>
                 
-                <div>
-                	<label for="date">*Date:</label> 
-                	<input name="date" id="date" type="date" data-role="datebox” data-options='{"mode": "calbox"}' default value="" class="required date" placeholder="Month/Day/Year" >
+                <div data-role="fieldcontain">
+                	<fieldset data-role="controlgroup" data-mini="true">
+                		<label for="date">*Date:</label>
+                		<input name="date" id="date" type="date" data-role="datebox" data-options='{"mode": "calbox"}' class="required date" value="" placeholder="Month/Day/Year">
+                	</fieldset>
                 </div>
 
                 
@@ -263,10 +267,9 @@
                 </div>
                 
                 <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup">
                         <label for="esttime">Estimated amount of time (In hours):</label>
                         <input type="range" name="esttime" id="esttime" value="5" min="1" max="24" data-highlight="true">
-                    </fieldset>
+                    
                 </div>
                 
                 <div data-role="fieldcontain">
@@ -285,17 +288,20 @@
                         <textarea name="textbox" id="textbox" placeholder="Enter notes here...."></textarea>
                     </fieldset>
                 </div>
-                
+
                 <div data-role="fieldcontain">
-                		<input type="reset" data-theme="a" data-icon="refresh" data-iconpos="left" value="Reset" />
-                		<input class="submit" type="submit" data-theme="b" data-icon="arrow-r" data-iconpos="left" value="Save Task" />
+                		<input type="reset" data-theme="a" data-icon="refresh" data-iconpos="left" value="Reset" data-inline="true"/>
+                		
+                		<button type="submit" data-theme="b" id="submit" name="submit" value="submit-value" class="ui-btn-hidden" aria-disabled="false" data-icon="arrow-r" data-iconpos="left" data-inline="true" target="#displayAll")>Save Task</button>
+                		
+
                 </div>
             
                 <a href="#taskFormErrors" id="tferrorslink" data-rel="dialog" data-transition="pop">Open Errors</a>
             
             </form>
            
-            	<div data-role="tabbar" data-iconpos="top" data-theme="a" data-position="fixed">
+            	<div data-role="tabbar" data-iconpos="top" data-theme="a" data-position="fixed" data-tap-toggle="false" >
                	 	<ul>
                   	  <li>
                         	<a href="#home" data-theme="" data-icon="home">
@@ -314,11 +320,12 @@
                       </li>
                     </ul>
             </div>        
-       </div>  
+           </div>
+           </div>
    </div> <!-- addTask End -->
     
-       <!-- Form Errors -->
-        <div data-role="dialog" id="taskFormErrors"
+        <!-- Form Errors -->
+        <div data-role="dialog" id="taskFormErrors">
         
         	<div data-role="header" data-position="fixed">
         		<h1>Missing Fields</h1>
@@ -331,14 +338,12 @@
         	
         </div><!-- Form Errors End -->
         
-        
-     
         <!-- displayAll -->
         <div data-role="page" data-theme="a" id="displayAll">
         
         <div data-role="header" data-theme="a">
 
-    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDo List</h3>
     <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
           
     <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
@@ -384,7 +389,7 @@
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>
-                            <a href="#construction" data-theme="" data-icon="delete">
+                            <a href="#" data-theme="" data-icon="delete" id="clear">
                                 Clear Stored Tasks
                             </a>
                         </li>
@@ -397,25 +402,13 @@
                 </div>
             </div>
             
-            <div data-role="content" style="padding: 0px">
-                <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup">
-                        <label for="searchinput3">
-                        </label>
-                        <input name="" id="searchinput3" placeholder="" value="" type="search">
-                    </fieldset>
-                </div>
-                <ul data-role="listview" data-divider-theme="b" data-inset="true">
-                    <li data-role="list-divider" role="heading">
-                        Divider
-                    </li>
-                    <li data-theme="c">
-                        <a href="#" data-transition="slide">
-                            Button
-                        </a>
-                    </li>
-                </ul>
+            <div data-role="content" id="datafield">
+            	<ul id="dfId" data-filter="true" data-role="listview" data-filter-placeholder="Search Tasks...">
+            	
+            	</ul>
+                
             </div>
+            
             <div data-role="tabbar" data-iconpos="top" data-theme="a">
                 <ul>
                     <li>
@@ -440,7 +433,7 @@
         <div data-role="page" data-theme="a" id="9Grid">
                     <div data-role="header" data-theme="a">
 
-    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDo List</h3>
     <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
           
     <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
@@ -563,7 +556,7 @@
         <div data-role="page" data-theme="a" id="misc">
         <div data-role="header" data-theme="a">
 
-    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDo List</h3>
     <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
           
     <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
@@ -644,7 +637,7 @@
         <div data-role="page" data-theme="a" id="personal">
            <div data-role="header" data-theme="a">
 
-    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDo List</h3>
     <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
           
     <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
@@ -702,17 +695,10 @@
                     </ul>
                 </div>
             </div>
-            <div data-role="content" style="padding: 15px">
-                <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup" data-mini="true">
-                        <label for="searchinput4">
-                        </label>
-                        <input name="" id="searchinput4" placeholder="Search list..." value=""
-                        type="search">
-                    </fieldset>
-                </div>
-                <div data-role="collapsible-set" data-theme="" data-content-theme="">
-                    <div data-role="collapsible" data-collapsed="false">
+            <div data-role="content" style="padding: 15px" >
+                
+                <div data-filter="true" data-role="collapsible-set" data-theme="" data-content-theme="">
+                    <div data-role="collapsible" data-collapsed="false" >
                         <h3>
                             Take out Trash
                         </h3>
@@ -903,7 +889,7 @@
         <div data-role="page" data-theme="a" id="school">
         <div data-role="header" data-theme="a">
 
-    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDo List</h3>
     <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
           
     <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
@@ -995,7 +981,7 @@
         <div data-role="page" data-theme="a" id="work">
         	<div data-role="header" data-theme="a">
 
-    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDo List</h3>
     <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
           
     <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
@@ -1087,7 +1073,7 @@
         <div data-role="page" data-theme="a" id="grocery">
         	<div data-role="header" data-theme="a">
 
-    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDo List</h3>
     <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
           
     <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
@@ -1233,7 +1219,7 @@
         <div data-role="page" data-theme="a" id="about">
         <div data-role="header" data-theme="a">
 
-    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDo List</h3>
     <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
           
     <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
@@ -1316,7 +1302,7 @@
         <div data-role="page" data-theme="a" id="construction">
         <div data-role="header" data-theme="a">
 
-    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDoList</h3>
+    <h3 style="text-align:left; margin-left:10px;"><img src="images/my_logo.png"/> ToDo List</h3>
     <!--<a href="www.google.com" data-icon="delete" style="left:auto; right:120px;">Cancel</a> -->
           
     <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
@@ -1415,6 +1401,10 @@
         <script type="text/javascript" src="js/json.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript" src="js/jqm.js"></script>
+        <script> 
+	        	$.mobile.page.prototype.options.domCache = true; 
+	    </script>
+        
     </body>
 
 </html>
